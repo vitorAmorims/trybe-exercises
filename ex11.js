@@ -53,18 +53,51 @@ let salario_liq;
 
 function calcularSalarioLiq (param){
     let aliquota_inss;
+    let inss;
+    let aliquota_ir;
+    let ir;
+    let parcela_reduzir;
     salario_bruto = param;
     if (salario_bruto == 1556.94){
-        aliquota_inss = 0.08;
+        aliquota_inss = 8;
+        inss = (salario_bruto / 100) * aliquota_inss;
+        salario_base = salario_bruto - inss;
     }else if (salario_bruto >=1556.95 && salario_bruto <= 2594.92){
-        aliquota_inss = 0.09;
+        aliquota_inss = 9;
+        inss = (salario_bruto / 100) * aliquota_inss;
+        salario_base = salario_bruto - inss;
     }else if (salario_bruto >= 2594.93 && salario_bruto <= 5189.88){
-        aliquota_inss = 0.11;
+        aliquota_inss = 11;
+        inss = (salario_bruto / 100) * aliquota_inss;
+        salario_base = salario_bruto - inss;
     }else if (salario_bruto >= 5189.89){
         aliquota_inss = 570.88;
+        inss = (salario_bruto / 100) * aliquota_inss;
+        salario_base = salario_bruto - inss;
     }else{
         aliquota_inss = 0;
+        inss = 0;
+        salario_base = 0
     }
-    console.log(aliquota_inss);//inss aliquotas ok
+    if (salario_base <= 1903,98){
+        aliquota_ir = 0;
+    }else if (salario_base >= 1903,99 && salario_base <= 2826,65){
+        aliquota_ir = 7.5;
+        ir = (salario_base /100) * aliquota_ir;
+        parcela_reduzir = 142,80; 
+    }else if(salario_base >= 2826,66 && salario_base <= 3751,05){
+        aliquota_ir = 15;
+        ir = (salario_base /100) * aliquota_ir;
+        parcela_reduzir = 354,80;
+    }else if (salario_base >= 3751,06 && salario_base <= 4664,68){
+        aliquota_ir = 22.5;
+        ir = (salario_base /100) * aliquota_ir;
+        parcela_reduzir = 636,13;
+    }else if (salario_base > 4664,68){
+        aliquota_ir = 27.5;
+        ir = (salario_base /100) * aliquota_ir;
+        parcela_reduzir = 869,36;
+    }
+    console.log(salario_base);//inss aliquotas ok
 }
-calcularSalarioLiq(1200);
+calcularSalarioLiq(3100);
