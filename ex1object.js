@@ -26,6 +26,13 @@ let curso = {
 };
 
 // Mostre o nome do curso
-console.log(curso.nome)
+console.log(curso.nome);
 
+//Mostre a descrição do módulo Internet
+console.log(curso.modulos.internet);
+
+//Mostre qual e a última semana do módulo HTML
+console.log(curso.modulos.html.semana[1]);
+
+//Mostre qual é o tipo do módulo shell
 
