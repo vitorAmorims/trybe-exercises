@@ -1,0 +1,23 @@
+/*
+1- Para o primeiro exercício de hoje, faça um programa que, dado um valor n qualquer, seja n > 1, imprima na tela um quadrado feito de asteriscos de lado de tamanho n. Por exemplo:
+n = 5
+
+*****
+*****
+*****
+*****
+*****
+*/
+function gerarAsterisk (param){
+  let linhas = "*";
+  let colunas = "*";
+  n = 0;
+    if (param > 1){
+      while (n < param){
+        console.log(linhas,colunas);
+      }
+    }else{
+        console.log("Parâmetro indevido para função.");
+    }
+}
+gerarAsterisk(2);
