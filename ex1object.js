@@ -35,4 +35,7 @@ console.log(curso.modulos.internet);
 console.log(curso.modulos.html.semana[1]);
 
 //Mostre qual é o tipo do módulo shell
+console.log(curso.modulos.shell.tipo);
+
+
 
