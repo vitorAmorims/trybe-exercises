@@ -19,12 +19,3 @@ function IndiceDoMenor (numeros){
 }
 console.log('o menor valor do array está no indice: '+IndiceDoMenor(numeros));
 
-//pesquisei o maior valor do array manualmente.
-let menor = 0;
-for (let i = 0; i < numeros.length; i++){
-    if (numeros[i] > menor){
-        menor = numeros[i];
-    }
-
-}
-console.log('O maior valor do array é: '+ menor);
