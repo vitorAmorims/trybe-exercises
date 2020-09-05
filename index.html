@@ -67,6 +67,13 @@
            let maisculo = document.getElementsByTagName('p')[0];
            return maisculo.innerHTML = maisculo.innerHTML.toLocaleUpperCase();
        }
+       function todastagsP () {
+         let paragraf = document.getElementsByTagName('p');
+         for (let i = 0; i < paragraf.length; i++){
+           console.dir(paragraf[i]);
+         }
+         return paragraf;
+       }
     </script>
   </body>
 </html>
