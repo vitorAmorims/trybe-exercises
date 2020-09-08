@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - parentNode/childNodes</title>
+</head>
+<body>
+    <div class="header">
+        <div class="linux">
+            <div class="ubuntu">
+                <h1>Ubuntu</h1>
+                <h2>teste</h2>
+                <h3>teste1</h3>
+            </div>
+            <div class="debian">
+                <h1>Debian</h1>
+            </div>
+        </div>
+    </div>
+    <script>
+        console.log(document.querySelector(".ubuntu").childNodes)//acessando todos os filhos da classe ubuntu encontroy div h1,h2,h3.
+        console.log(document.querySelector(".debian").parentNode)//acessando pai da classe debian acessou div linux
+    </script>
+</body>
+</html>
