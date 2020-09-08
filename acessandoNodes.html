@@ -49,6 +49,9 @@
         console.dir(document.querySelector("#elementoOndeVoceEsta"))//usei console.dir para pesquisar o elemento mais a fundo.
         console.clear();
         console.dir(document.querySelector("#elementoOndeVoceEsta").previousElementSibling)
+        //Agora acesse o texto Atenção! a partir de elementoOndeVoceEsta.
+        console.clear();
+        console.dir(document.querySelector("#elementoOndeVoceEsta").parentNode.outerText)
     </script>
 </body>
 </html>
