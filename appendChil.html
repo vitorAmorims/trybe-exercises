@@ -23,7 +23,10 @@
         h1.style.backgroundColor = "black"
         document.getElementById("lista").appendChild(h1);
         console.clear();
-         
+        //consulta o elemento lista
+        let listaFilho = document.createElement("div") //criando elemento div
+        document.getElementById("lista").appendChild(listaFilho) //criando um filho para o elemento lista.
+        console.dir(document.querySelector("#lista").childNodes); //consultando os filhos de #lista.
     </script>
 </body>
 </html>
