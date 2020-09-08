@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM - appendChild</title>
 </head>
-<body>
+<body id="bodyteste">
     <div id="image">
 
     </div>
     <div id="lista">
+
+    </div>
+    <div id="irmaoLista">
 
     </div>
     <script>
@@ -27,6 +30,10 @@
         let listaFilho = document.createElement("div") //criando elemento div
         document.getElementById("lista").appendChild(listaFilho) //criando um filho para o elemento lista.
         console.dir(document.querySelector("#lista").childNodes); //consultando os filhos de #lista.
+        console.clear();
+        let listaIrma = document.createElement("div") //criando um filho para o elemento lista.
+        document.getElementById("irmaoLista").appendChild(listaIrma); //atribuindo div para id irmaoLista
+        console.log(document.querySelector("#lista").parentNode); //consulta do elemento pai
     </script>
 </body>
 </html>
