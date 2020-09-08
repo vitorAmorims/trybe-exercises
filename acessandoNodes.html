@@ -35,6 +35,14 @@
         var primeiroFilhoFilho = document.querySelector("#primeiroFilhoDoFilho") //atribuindo elemento
         console.dir(primeiroFilhoFilho); //consultando mais a fundo o elemento.
         primeiroFilhoDoFilho.innerHTML = "TESTE" //adicionado texto ao elemento #primeiroFilhoDoFilho
+        console.clear();
+        console.dir(document.querySelector("#pai").childNodes) //o comando console.dir é muito interessantte, consigo pesquisar a fundo o elemento.
+        console.clear();
+        /*
+        consigo acesso o elemento primeiroFilho de duas maneiras
+        */
+        console.log(document.querySelector("#pai").firstElementChild)
+        console.log(document.querySelector("#pai").childNodes[1])
     </script>
 </body>
 </html>
