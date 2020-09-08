@@ -11,7 +11,7 @@
             <div id="primeiroFilho"></div>
             <div id="elementoOndeVoceEsta">
                 <div id="primeiroFilhoDoFilho"></div>
-            <div id="segundoEUltimoFilhoDoFilho"></div>
+            <div id="segundoEultimoFilhoDoFilho"></div>
         </div>
         Atenção!
             <div id="terceiroFilho"></div>
@@ -52,6 +52,9 @@
         //Agora acesse o texto Atenção! a partir de elementoOndeVoceEsta.
         console.clear();
         console.dir(document.querySelector("#elementoOndeVoceEsta").parentNode.outerText)
+        //Agora acesse o terceiroFilho a partir de elementoOndeVoceEsta.
+        console.clear();
+        console.dir(document.querySelector("#elementoOndeVoceEsta").parentNode.childNodes[5])
     </script>
 </body>
 </html>
