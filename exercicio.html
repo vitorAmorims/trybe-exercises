@@ -80,7 +80,15 @@
       p.innerHTML = "lorem ipsum dolor sit amet, consectet";
       document.querySelector(".center-content").appendChild(p);
       console.log(document.querySelector(".center-content").children[0]);//consutando o resultado.
+      //Adicione a tag div com a classe left-content como filho da tag div criada no passo 2;
+      console.clear();
+      let div2 = document.createElement("div");
+      div2.className = "left-content";
+      document.querySelector(".main-content").appendChild(div2);
+      console.dir(document.querySelector(".main-content").childNodes);//confirmando a criação da tag div com a classe left-content, sendo irma da classe center-content
       
+
+
 
 
         
