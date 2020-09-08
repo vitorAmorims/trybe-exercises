@@ -10,7 +10,7 @@
         <div id="pai">
             <div id="primeiroFilho"></div>
             <div id="elementoOndeVoceEsta">
-            <div id="primeiroFilhoDoFilho"></div>
+                <div id="primeiroFilhoDoFilho"></div>
             <div id="segundoEUltimoFilhoDoFilho"></div>
         </div>
         Atenção!
@@ -31,6 +31,10 @@
         pai.style.height = "60px";
         pai.style.size = "20px";
         pai.style.border = "3px solid silver";
+        console.log(document.querySelector("#primeiroFilhoDoFilho")) //pesquisando elemento
+        var primeiroFilhoFilho = document.querySelector("#primeiroFilhoDoFilho") //atribuindo elemento
+        console.dir(primeiroFilhoFilho); //consultando mais a fundo o elemento.
+        primeiroFilhoDoFilho.innerHTML = "TESTE" //adicionado texto ao elemento #primeiroFilhoDoFilho
     </script>
 </body>
 </html>
