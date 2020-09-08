@@ -57,6 +57,7 @@
   </head>
   <body>
     <script>
+      
       // Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body;
       let h1 = document.createElement("h1");
       h1.innerHTML = "Exercício 5.2 - JavaScript DOM"
@@ -69,23 +70,34 @@
       div.className = "main-content";
       console.dir(document.body.childNodes[3]);//consulteu a div com classe main-content
         console.clear();
-      //Adicione a tag div com a classe center-content como filho da tag div criada no passo 2;
+      
+        //Adicione a tag div com a classe center-content como filho da tag div criada no passo 2;
       let div1 = document.createElement("div");
       document.querySelector(".main-content").appendChild(div1);
       div1.className = "center-content";
       console.dir(document.querySelector(".center-content").parentElement) //confirmei que a div class center-content como filho da tag div class main-content
+      
       //Adicione a tag p como filho do div criado no passo 3 e coloque algum texto;
       console.clear();
       let p = document.createElement("p");
       p.innerHTML = "lorem ipsum dolor sit amet, consectet";
       document.querySelector(".center-content").appendChild(p);
       console.log(document.querySelector(".center-content").children[0]);//consutando o resultado.
+      
       //Adicione a tag div com a classe left-content como filho da tag div criada no passo 2;
       console.clear();
       let div2 = document.createElement("div");
       div2.className = "left-content";
       document.querySelector(".main-content").appendChild(div2);
       console.dir(document.querySelector(".main-content").childNodes);//confirmando a criação da tag div com a classe left-content, sendo irma da classe center-content
+
+      //Adicione a tag div com a classe right-content como filho da tag div criada no passo 2;
+      console.clear();
+      let div3 = document.createElement("div");
+      div3.className = "right-content";
+      document.querySelector(".main-content").appendChild(div3);
+      console.dir(document.querySelector(".main-content").childNodes);//confirmando a criação da tag div com a classe right-content, sendo irma das classes center-content e left-content
+
       
 
 
