@@ -98,7 +98,15 @@
       document.querySelector(".main-content").appendChild(div3);
       console.dir(document.querySelector(".main-content").childNodes);//confirmando a criação da tag div com a classe right-content, sendo irma das classes center-content e left-content
 
-      
+      //Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image. Esse elemento deve ser filho do div criado no passo 5;
+      let img = document.createElement("img");
+      img.src = "https://picsum.photos/200";
+      img.className = ".small-image"
+      document.querySelector(".left-content").appendChild(img);
+      console.log(document.querySelector(".left-content"))
+
+
+
 
 
 
