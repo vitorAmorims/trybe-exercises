@@ -74,6 +74,14 @@
       document.querySelector(".main-content").appendChild(div1);
       div1.className = "center-content";
       console.dir(document.querySelector(".center-content").parentElement) //confirmei que a div class center-content como filho da tag div class main-content
+      //Adicione a tag p como filho do div criado no passo 3 e coloque algum texto;
+      console.clear();
+      let p = document.createElement("p");
+      p.innerHTML = "lorem ipsum dolor sit amet, consectet";
+      document.querySelector(".center-content").appendChild(p);
+      console.log(document.querySelector(".center-content").children[0]);//consutando o resultado.
+      
+
 
         
     
