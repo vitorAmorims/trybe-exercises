@@ -131,9 +131,23 @@
       for (let i = 0; i < 3; i += 1) {
         h3Classe[i].className = "description";
       }
+      console.clear();
       
-        
+      //Remova o div criado no passo 5 (aquele que possui a classe left-content). Utilize a função .removeChild();
+      /*
+      pesquisei os filhos e encontrei a div class left-content
+      */
+      console.log(document.querySelector(".main-content").childNodes)
+      //ou
+      console.log(document.getElementsByClassName("main-content").childNodes)
+      console.clear();
+      let elementos = document.querySelector(".main-content").childNodes; //atribuindo o elemento pai para uma variavel
+      document.querySelector(".main-content").removeChild(elementos[1])//removendo tag a partir do elemento pai.
+      console.log(document.querySelector(".main-content").childNodes) //confirmando a remoção da tag div class left-content
+      
+      
     
+
     </script>
   </body>
 </html>
