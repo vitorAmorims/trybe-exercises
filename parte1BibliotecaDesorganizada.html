@@ -24,7 +24,19 @@
     Na makeMadLibfunção, recupere os valores atuais dos elementos de entrada do formulário, crie uma história a partir deles e gere isso na div da história (como "Pamela realmente gosta de pepinos rosa.")
     */
     //tag script no corpo html ok
+    let button = document.querySelector("#lib-button");
+    let substantivo = document.querySelector("#noun")
+    let adjetivo = document.querySelector("#adjective")
+    let nome = document.querySelector("#person")
+    let historia = document.querySelector("#story")
+    console.log(historia);
+    button.addEventListener("click",makeMadLibfunção);
+    function makeMadLibfunção () {
+        historia.innerText = `O cidadão ${nome.value}, acha ${substantivo.value.toLowerCase()} ${adjetivo.value.toLowerCase()}`;
+    }
+
     
+
  </script>
   
  </body>
