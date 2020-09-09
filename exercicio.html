@@ -144,6 +144,11 @@
       let elementos = document.querySelector(".main-content").childNodes; //atribuindo o elemento pai para uma variavel
       document.querySelector(".main-content").removeChild(elementos[1])//removendo tag a partir do elemento pai.
       console.log(document.querySelector(".main-content").childNodes) //confirmando a remoção da tag div class left-content
+
+      //Centralize o div criado no passo 6 (aquele que possui a classe right-content). Dica: para centralizar, basta configurar o margin-right: auto do div;
+      console.log(document.querySelector(".right-content")) //pesquisei para ver o conteúdo.
+      let centralizarRightContent = document.querySelector(".right-content");
+      centralizarRightContent.style.marginRight = "auto";
       
       
     
