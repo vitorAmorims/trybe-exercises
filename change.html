@@ -6,6 +6,8 @@
     <title>Event change</title>
 </head>
 <body>
+    <input placeholder="Enter some text" name="name"/>
+    <p id="log"></p>
     <label>Choose an ice cream flavor:
         <select class="ice-cream" name="ice-cream">
           <option value="">Select One …</option>
@@ -17,6 +19,15 @@
       
     <div class="result"></div>
     <script>
+        const input = document.querySelector('input');
+        const log = document.getElementById('log');
+
+        input.addEventListener('change', updateValue);
+
+        function updateValue(e) {
+            log.textContent = e.target.value;
+        }
+        //com realçao aos sabores dos sorvetes
         const selectElement = document.querySelector('.ice-cream');
 
         selectElement.addEventListener('change', (event) => {
