@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouseover</title>
+</head>
+<body>
+    <h1>onmouseover é uma propriedade GlobalEventHandler</h1> 
+    <h3>Assim podemos processar mouseover eventos</h3>
+    <h4>sintaxe</h4>  
+    <p>element.onmouseover = function;</p>
+    <h1>Exemplo</h1>
+    <p>Test your mouse on me!</p>
+    <script>
+        const p = document.querySelectorAll("p")[1];
+        p.onmouseover = logMouseOver;
+        p.onmouseout = logMouseOut;
+        function logMouseOver() {
+            p.innerHTML = 'MOUSE OVER detected';
+        }
+        function logMouseOut() {
+            p.innerHTML = 'MOUSE OUT detected';
+        }
+    </script>
+</body>
+</html>
