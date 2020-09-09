@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event dbclick and click</title>
+</head>
+<body>
+    <h5>Clique duas vezes em mim</h5>
+    <button id="btn">Clique em mim</button>
+    <script>
+        let botao = document.getElementById("btn")
+        botao.addEventListener('click', function () {
+            let h2 = document.createElement("h2");
+            h2.innerHTML = "Você clicou!";
+            document.body.appendChild(h2);
+        })
+        console.log(botao);
+        botao.addEventListener('mouseover', function () {
+            let h1 = document.createElement("h1");
+            h1.innerHTML = "Você encostou o mouse no botão, mas não clicou!";
+            document.body.appendChild(h1);
+        })
+        botao.addEventListener('mouseout', function() {
+            let h1 = document.createElement("h1");
+            h1.innerHTML = "Você encostou o mouse no botão e saiu!";
+            document.body.appendChild(h1);
+        })
+        let h5 = document.querySelector("h5");
+        h5.addEventListener("dblclick", function() {
+            alert("Obrigado por interagir, você clicou duas vezes!")
+        })         
+    </script>
+</body>
+</html>
