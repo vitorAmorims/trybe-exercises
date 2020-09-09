@@ -149,6 +149,13 @@
       console.log(document.querySelector(".right-content")) //pesquisei para ver o conteúdo.
       let centralizarRightContent = document.querySelector(".right-content");
       centralizarRightContent.style.marginRight = "auto";
+
+      //Troque a cor de fundo do elemento pai da div criada no passo 3 (aquela que possui a classe center-content) para a cor verde;
+      console.log(document.querySelector(".center-content").childNodes[0]);//pesquisando para ver o consteudo desta div.
+      let CorCenterContent = document.querySelector(".center-content").childNodes[0]
+      CorCenterContent.style.color = "green"
+
+      
       
       
     
