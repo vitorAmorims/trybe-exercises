@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event keyup</title>
+</head>
+<body>
+    <h1>Documento: evento keyup</h1>
+    <h3>O keyupevento é disparado quando uma tecla é liberada</h3>
+    <p>Propriedade do manipulador de eventos onkeyup</p>
+    <h1>Exemplo</h1>
+    <p>Focus the IFrame first (e.g. by clicking in it), then try pressing some keys.</p>
+    <p id="log"></p>
+    <script>
+        const log = document.getElementById('log');
+
+        document.addEventListener('keyup', logKey);
+
+        function logKey(e) {
+            log.textContent += ` ${e.code}`;
+        }
+    </script>
+</body>
+</html>
