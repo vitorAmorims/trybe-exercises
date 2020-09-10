@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -35,8 +35,19 @@
         <strong>discount</strong> o resultado da multiplicação.
       </p>
       <script language="javascript" type="text/javascript">
-        //JavaScript para a tarefa 2
-        //JavaScript para a tarefa 2
+        //JavaScript para a tarefa 1
+        let divTarefa1 = document.querySelector(".tarefa1");
+        let button = document.createElement("button")
+        button.className = ".button"
+        document.querySelector(".tarefa1").appendChild(button)
+        divTarefa1.childNodes[0].remove()
+        button.style.height = "20px";
+        button.style.width = "60px";
+        button.innerText = "Clique";
+        button.style.strong;
+        button.addEventListener("click", function () {
+            alert("Você clicou no botão");
+        });
         //JavaScript para a tarefa 2
       </script>
       <hr />
