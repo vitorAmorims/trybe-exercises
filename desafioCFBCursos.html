@@ -23,7 +23,14 @@
     <h1 class="title">Desafio addEventListener</h1>
     <div id="dv1"></div>
     <script>
-
+        var px=0;
+        var py=0;
+        function move () {
+            var object = document.getElementById("dv1");
+            object.addEventListener('keyDown',move);
+            var tecla = event.keyCode;
+            //keyCode 37-esquerda, 38-acima, 39-direita e 40-abaixo
+        }
     </script>
     
 </body>
