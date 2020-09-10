@@ -30,6 +30,19 @@
             object.addEventListener('keyDown',move);
             var tecla = event.keyCode;
             //keyCode 37-esquerda, 38-acima, 39-direita e 40-abaixo
+            if (tecla === 37) {
+                px -= 10;
+                object.style.left = px + 'px';
+            }else if (tecla === 38) {
+                py -= 10;
+                object.style.top = py + 'px';
+            }else if (tecla === 39) {
+                px += 10;
+                object.style.left = px + 'px';
+            }else if (tecla === 40) {
+                py += 10;
+                object.style.top = py + 'px';
+            }
         }
     </script>
     
