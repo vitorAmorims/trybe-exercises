@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio eventos</title>
     <style>
-        .title {
-            text-align: center
-        }
         #dv1 {
             width: 100px;
             height: 100px;
@@ -20,30 +17,29 @@
     </style>
 </head>
 <body>
-    <h1 class="title">Desafio addEventListener</h1>
     <div id="dv1"></div>
     <script>
         var px=0;
         var py=0;
         function move () {
             var object = document.getElementById("dv1");
-            object.addEventListener('keyDown',move);
             var tecla = event.keyCode;
             //keyCode 37-esquerda, 38-acima, 39-direita e 40-abaixo
-            if (tecla === 37) {
+            if (tecla == 37) {
                 px -= 10;
                 object.style.left = px + 'px';
-            }else if (tecla === 38) {
+            }else if (tecla == 38) {
                 py -= 10;
                 object.style.top = py + 'px';
-            }else if (tecla === 39) {
+            }else if (tecla == 39) {
                 px += 10;
                 object.style.left = px + 'px';
-            }else if (tecla === 40) {
+            }else if (tecla == 40) {
                 py += 10;
                 object.style.top = py + 'px';
             }
         }
+        document.addEventListener('keydown',move);
     </script>
     
 </body>
