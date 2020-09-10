@@ -37,6 +37,10 @@
             }else if (tecla == 40) {
                 py += 10;
                 object.style.top = py + 'px';
+            }else if (tecla == 13) { //se pressionar enter, vamos remover a função
+                alert('Função keydown removida!');
+                object.style.backgroundColor = "blue";
+                document.removeEventListener('keydown',move);
             }
         }
         document.addEventListener('keydown',move);
