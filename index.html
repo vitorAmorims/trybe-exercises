@@ -42,9 +42,9 @@
     <label> Escolha o espaçamento entre linhas do texto:
         <select class="line-height" name = "espacamento em linhas">
             <option  value = "" > Selecione espaçamento</option>
-            <option class = "line-height5" value = 5 > 5 </option>
-            <option class = "line-height10" value = 10 > 10 </option>
-            <option class = "line-height15" value = 15 > 15 </option>
+            <option value = 5px > 5 </option>
+            <option  value = 10px > 10 </option>
+            <option  value = 15px > 15 </option>
         </select >
     </label >
     </div>
@@ -102,6 +102,12 @@
             headerText.style.fontSize = event.target.value
             textBody.style.fontSize = event.target.value
             textBody1.style.fontSize = event.target.value
+       })
+       const heightLine = document.querySelector(".line-height")
+       heightLine.addEventListener('change', (event) => {
+            headerText.style.lineHeight = event.target.value
+            textBody.style.lineHeight = event.target.value
+            textBody1.style.lineHeight = event.target.value
        })
     </script>
 </body>
