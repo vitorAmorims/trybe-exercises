@@ -70,7 +70,7 @@
     <h3>Porque usamos isso?</h3>
     <p>É um fato estabelecido há muito tempo que um leitor se distrairá com o conteúdo legível de uma página ao examinar seu layout. O objetivo de usar Lorem Ipsum é que ele tem uma distribuição de letras mais ou menos normal, ao contrário de usar 'Conteúdo aqui, conteúdo aqui', fazendo com que pareça um inglês legível. Muitos pacotes de editoração eletrônica e editores de páginas da web agora usam Lorem Ipsum como seu texto de modelo padrão, e uma pesquisa por 'lorem ipsum' revelará muitos sites ainda em sua infância. Várias versões evoluíram ao longo dos anos, às vezes por acidente, às vezes de propósito (humor injetado e coisas do gênero).</p>
     </div>
-    <div class="text-body">
+    <div class="text-body1">
     <h3>De onde isso vem?</h3>
     <p>Ao contrário da crença popular, Lorem Ipsum não é simplesmente um texto aleatório. Tem raízes em uma peça da literatura clássica latina de 45 aC, com mais de 2.000 anos. Richard McClintock, um professor de latim no Hampden-Sydney College, na Virgínia, pesquisou uma das palavras latinas mais obscuras, consectetur, de uma passagem de Lorem Ipsum e, examinando as citações da palavra na literatura clássica, descobriu a fonte indubitável. Lorem Ipsum vem das seções 1.10.32 e 1.10.33 de "de Finibus Bonorum et Malorum" (Os Extremos do Bem e do Mal) de Cícero, escrito em 45 aC. Este livro é um tratado sobre a teoria da ética, muito popular durante o Renascimento. A primeira linha de Lorem Ipsum, "Lorem ipsum dolor sit amet ..", vem de uma linha na seção 1.10.32.</p>
 
@@ -82,10 +82,17 @@
 
     <script>
        const backgrColor = (document.querySelector(".backcolors"));
-       const headerText = document.querySelector(".header-text")
-       
+       const headerText = document.querySelector(".header-text");
+       const textBody = document.querySelector(".text-body");
+       const textBody1 = document.querySelector(".text-body1")
        backgrColor.addEventListener('change', (event) => {
            headerText.style.backgroundColor = event.target.value;
+       })
+       backgrColor.addEventListener('change', (event) => {
+           textBody.style.backgroundColor = event.target.value;
+       })
+       backgrColor.addEventListener('change', (event) => {
+           textBody1.style.backgroundColor = event.target.value;
        })
        
 
