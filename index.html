@@ -4,6 +4,7 @@
     <meta charset="UTF-8"/>
     <title>Exercício 5.4</title>
     <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet">    
 </head>
 <body>
     <div>
@@ -52,9 +53,10 @@
     <label> Escolha o tipo de fonte:
         <select  class = "font-family" name = "escolha fonte">
             <option  value = "" > Escolha fonte</option>
-            <option  class = "sans-serif" value = "sans-serif"> sans-serif </option>
-            <option class = "serif" value = "serif" > serif </option>
-            <option class = "fantasy" value = "fantasy"> fantasy </option>
+            <option  value = "sans-serif"> sans-serif </option>
+            <option  value = "serif" > serif </option>
+            <option value = "helvetica"> helvetica </option>
+            <option  value = 'Long Cang', cursive> long Cang </option>
         </select >
     </label >
     </div>
@@ -108,6 +110,12 @@
             headerText.style.lineHeight = event.target.value
             textBody.style.lineHeight = event.target.value
             textBody1.style.lineHeight = event.target.value
+       })
+       const familyFont =  document.querySelector(".font-family")
+       familyFont.addEventListener('change', (event) => {
+            headerText.style.fontFamily = event.target.value
+            textBody.style.fontFamily = event.target.value
+            textBody1.style.fontFamily = event.target.value        
        })
     </script>
 </body>
