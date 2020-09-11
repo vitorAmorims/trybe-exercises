@@ -21,9 +21,10 @@
     <label> Escolha a cor do texto:
         <select  class = "colors-text" name = "cores-texto">
             <option value = "" > Selecione cor </option>
-            <option class = "color-yellow" value = "yellow" > Amarelo </option>
-            <option class = "color-red" value = "red" > Vermelho </option>
-            <option class = "color-green" value = "green" > Verde </option>
+            <option  value = "yellow" > Amarelo </option>
+            <option  value = "red" > Vermelho </option>
+            <option  value = "green" > Verde </option>
+            <option  value = "black" > Preto </option>
         </select >
     </label >
     </div>
@@ -31,9 +32,9 @@
     <label> Escolha o tamanho do texto:
         <select  class = "size-text" name = "tamanho-texto">
             <option  value = "" > Selecione tamanho das letras </option>
-            <option class = "size10" value = 10 > 10 </option>
-            <option class = "size20" value = 20 > 20 </option>
-            <option class = "size30" value = 30 > 30 </option>
+            <option  value = 10px > 10 </option>
+            <option  value = 20px > 20 </option>
+            <option  value = 30px > 30 </option>
         </select >
     </label >
     </div>
@@ -87,15 +88,21 @@
        const textBody1 = document.querySelector(".text-body1")
        backgrColor.addEventListener('change', (event) => {
            headerText.style.backgroundColor = event.target.value;
-       })
-       backgrColor.addEventListener('change', (event) => {
            textBody.style.backgroundColor = event.target.value;
-       })
-       backgrColor.addEventListener('change', (event) => {
            textBody1.style.backgroundColor = event.target.value;
        })
-       
-
+       const textColors = document.querySelector(".colors-text")
+       textColors.addEventListener('change', (event) => {
+           headerText.style.color = event.target.value
+           textBody.style.color = event.target.value
+           textBody1.style.color = event.target.value
+       })
+       const sizeText = document.querySelector (".size-text")
+       sizeText.addEventListener('change', (event) => { 
+            headerText.style.fontSize = event.target.value
+            textBody.style.fontSize = event.target.value
+            textBody1.style.fontSize = event.target.value
+       })
     </script>
 </body>
 </html>
