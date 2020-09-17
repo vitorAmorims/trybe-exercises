@@ -10,6 +10,52 @@
         <h1>Meu formulário</h1>
         <p>Este é um formulário de exemplo!</p>
     </div>
+    <form action="" method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="">Nome</label>
+            <input type="text" required="required" name="nome" placeholder="Digite seu nome!" id="">
+        </div>
+        <div>
+            <label for="">E-mail</label>
+            <input type="text" required="required" name="email" placeholder="Digite seu e-mail" id="">
+        </div>
+        <div>
+            <label for="">Regiões do Brasil</label>
+            <select required="required" name="Região" id="">
+                <option selected="selected" value="">Selecione</option>
+                <option value="norte">Norte</option>
+                <option value="nordeste">Nordeste</option>
+                <option value="centrooeste">Centro Oeste</option>
+                <option value="sudeste">Sudeste</option>
+                <option value="sul">Sul</option>
+            </select>
+        </div>
+        <div>
+            <label for="">Foto</label>
+            <input required="required" type="file" name="foto" id="">
+        </div>
+        <div>
+            <p>Selecione o sexo:</p> <!--coloquei 1 e 2 no form, com o mesmo valor de id, para melhorar interação com usuário.-->
+            <label for="1"><input type="radio" name="sexo" value="m" id="1">Masculino</label>
+            <label for="2"><input type="radio" name="sexo" value="f" id="2">Feminino</label>
+        </div>
+        <div>
+            <label for="">Biografia</label>
+            <textarea name="biografia" required="required" placeholder="Digite sua biográfia" id="" cols="10" rows="5"></textarea>
+        </div>
+        <div>
+            <label for="">Senha</label>
+            <input type="password" required="required" name="senha" placeholder="Digite sua senha" id="">
+        </div>
+        <div>
+            <label for="noticias">
+                <input type="checkbox" name="newletter" id="noticias">
+                Deseja receber e-mails promocionais e notícias?</label>
+        </div>
+        <div>
+            <button name="enviar" type="submit">Enviar</button>
+        </div>
+    </form>
 
 </body>
 </html>
