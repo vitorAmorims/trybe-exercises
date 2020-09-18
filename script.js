@@ -39,13 +39,14 @@ const selectEstado = document.querySelector("#estado");
 inserirEstados ();
 
 var data = document.querySelector('#data');
+
+data.addEventListener('keyup', function () {
 var vdata;
 var dia;
 var mes;
 var ano;
- 
-function validarData (data) {
-vdata = data.value.split('');
+        
+vdata = data.value.split('/',3);
 dia = parseInt(vdata[0]+vdata[1]);
 mes = parseInt(vdata[3]+vdata[4]);
 ano = parseInt(vdata[6]+vdata[7]+vdata[8]+vdata[9]);
@@ -60,7 +61,6 @@ ano = parseInt(vdata[6]+vdata[7]+vdata[8]+vdata[9]);
     } else {
         return vdata = (`${dia}/${mes}/${ano}`)
     }
-}
+})
 
 
-validarData(data);
