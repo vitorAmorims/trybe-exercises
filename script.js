@@ -38,5 +38,29 @@ const selectEstado = document.querySelector("#estado");
 }
 inserirEstados ();
 
-var dateControl = document.querySelector('#data');
-console.log(dateControl);
+var data = document.querySelector('#data');
+var vdata;
+var dia;
+var mes;
+var ano;
+ 
+function validarData (data) {
+vdata = data.value.split('');
+dia = parseInt(vdata[0]+vdata[1]);
+mes = parseInt(vdata[3]+vdata[4]);
+ano = parseInt(vdata[6]+vdata[7]+vdata[8]+vdata[9]);
+    if (dia < 0 || dia > 31) {
+        alert('date Invalid');
+        if (mes < 0 || mes > 12) {
+            alert('month Invalid');
+            if (ano <= 0) {
+                alert('year Invalid');
+            }
+        }
+    } else {
+        return vdata = (`${dia}/${mes}/${ano}`)
+    }
+}
+
+
+validarData(data);
