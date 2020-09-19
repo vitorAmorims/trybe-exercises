@@ -1,8 +1,29 @@
-let nome = document.querySelector("#nome");
-nome.addEventListener('change', function() {
-    nome.required = this.required;
-})
-let estadosDoBrasil = ["Acre (AC)",
+function limitarInputCpf(obj) {
+    obj.value = obj.value.substring(0,11);
+}
+
+
+function validateForm () {
+    let name = document.forms["myForm"]["fnome"].value;
+    if (name == "" || name == null) { 
+        alert("Name must be filled out");
+        return false;
+    }
+    let cpf = document.forms["myForm"]["fcpf"].value;
+    if (cpf == null || cpf == '') {
+        alert("CPF must be filled out");
+        return false;
+    }
+    let endereco = document.forms["myForm"]["fendereco"].value;
+    if (endereco == null || endereco == '') {
+        alert("Address must be filled out");
+        return false;
+    }
+    
+}
+
+
+/*let estadosDoBrasil = ["Acre (AC)",
 "Alagoas (AL)",
 "Amapá (AP)",
 "Amazonas (AM)",
@@ -41,7 +62,7 @@ const selectEstado = document.querySelector("#estado");
     
 }
 inserirEstados ();
-
+*/
 /*var data = document.querySelector('#data');
 data.addEventListener('keyup', function () {
 var vdata;
@@ -66,13 +87,14 @@ ano = parseInt(vdata[6]+vdata[7]+vdata[8]+vdata[9]);
 })
 */
 
-const button = (document.querySelector('#button')); //submit enviar e apaga os valores
+/*const button = (document.querySelector('#button')); //submit enviar e apaga os valores
 button.addEventListener('click', preventDefault);
 
 function  preventDefault () {
+    */
 //nao deixar submeter dados
 //create 1 div apenas, e colocar os valores de todos os campos do formulário 
-}
+
 
 //input tipo reset
 
