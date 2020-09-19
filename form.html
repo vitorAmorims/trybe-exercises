@@ -14,7 +14,7 @@
     <header>
         <h1>Exercício do dia</h1>
     </header>
-    <form name="myForm" action="localhost" method="GET" enctype="multipart/form-data" onsubmit="return validateForm()">
+    <form name="myForm" action="localhost:5001" method="GET" enctype="multipart/form-data" onsubmit="return validateForm()">
         <div class="form-group">
             <label class="label-default" for="nome">Nome</label>
             <input class="form-control" type="text" name="fnome" maxlength="40" id="nome">
@@ -91,8 +91,12 @@
             </div>
         </div>
         <div class="form-group">
-            <input class="btn btn-dark" type="submit" value="Submit" id="buttonSubmit"/>
+            <input class="btn btn-dark" type="submit" value="Submit" id="btnSubmit" onclick="preventDefault()">
         </div>
+        <div class="form-group">
+            <input type="reset" class="btn btn-danger" value="Reset" id="btnReset">
+        </div>
+        
         
     </form>
 </body>
