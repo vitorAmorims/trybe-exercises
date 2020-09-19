@@ -19,50 +19,62 @@ function validateForm () {
         alert("Address must be filled out");
         return false;
     }
-    
+    let cidade = document.forms["myForm"]["fcidade"].value;
+    if (cidade == null || cidade == '') {
+        alert("City must be filled out");
+        return false;
+    }
+    let festado = (document.querySelectorAll(".estados")[0].value)
+    if (festado == 0) {
+        alert("State must be filled out");
+        return false;
+    }
 }
 
-
-/*let estadosDoBrasil = ["Acre (AC)",
-"Alagoas (AL)",
-"Amapá (AP)",
-"Amazonas (AM)",
-"Bahia (BA)",
-"Ceará (CE)",
-"Distrito Federal (DF)",
-"Espírito Santo (ES)",
-"Goiás (GO)",
-"Maranhão (MA)",
-"Mato Grosso (MT)",
-"Mato Grosso do Sul (MS)",
-"Minas Gerais (MG)",
-"Pará (PA)",
-"Paraíba (PB)",
-"Paraná (PR)",
-"Pernambuco (PE)",
-"Piauí (PI)",
-"Rio de Janeiro (RJ)",
-"Rio Grande do Norte (RN)",
-"Rio Grande do Sul (RS)",
-"Rondônia (RO)",
-"Roraima (RR)",
-"Santa Catarina (SC)",
-"São Paulo (SP)",
-"Sergipe (SE)",
-"Tocantins (TO)"];
-
-function inserirEstados () {
-const selectEstado = document.querySelector("#estado");
+let estadosDoBrasil = [" ","Acre (AC)",
+    "Alagoas (AL)",
+    "Amapá (AP)",
+    "Amazonas (AM)",
+    "Bahia (BA)",
+    "Ceará (CE)",
+    "Distrito Federal (DF)",
+    "Espírito Santo (ES)",
+    "Goiás (GO)",
+    "Maranhão (MA)",
+    "Mato Grosso (MT)",
+    "Mato Grosso do Sul (MS)",
+    "Minas Gerais (MG)",
+    "Pará (PA)",
+    "Paraíba (PB)",
+    "Paraná (PR)",
+    "Pernambuco (PE)",
+    "Piauí (PI)",
+    "Rio de Janeiro (RJ)",
+    "Rio Grande do Norte (RN)",
+    "Rio Grande do Sul (RS)",
+    "Rondônia (RO)",
+    "Roraima (RR)",
+    "Santa Catarina (SC)",
+    "São Paulo (SP)",
+    "Sergipe (SE)",
+    "Tocantins (TO)"];
+    
+function inserirEstados (estadosDoBrasil) {
+    const selectEstado = document.querySelector("#estado");
     for (let i = 0; i < estadosDoBrasil.length; i++) {
         let opt = document.createElement('option');
         opt.value = i;
+        opt.classList.add('estados');
+        opt.nome = estadosDoBrasil[i];
         opt.text = estadosDoBrasil[i]
         selectEstado.appendChild(opt);
     }
-    
 }
-inserirEstados ();
-*/
+
+window.onload = function () {
+    inserirEstados (estadosDoBrasil);
+}
+
 /*var data = document.querySelector('#data');
 data.addEventListener('keyup', function () {
 var vdata;

@@ -35,13 +35,30 @@
             <div class="form-row">
                 <div class="form-group col-md-3">
                     <label class="label-default" for="cpf">CPF</label>
-                    <input class="form-control" type="number" maxlength="11" name="fcpf" id="cpf" onkeyup="limitarInputCpf(this)">
+                    <input class="form-control" type="number" maxlength="11" placeholder="Digite somente números" name="fcpf" id="cpf" onkeyup="limitarInputCpf(this)">
                 </div>
             </div>
         </div>
         <div class="form-group">
             <label class="label-default" for="endereco">Endereço</label>
             <input class="form-control" type="text" maxlength="200" name="fendereco" id="endereco">
+        </div>
+
+        <div class="form-group">
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label class="label-default" for="cidade">Cidade</label>
+                    <input class="form-control" type="text" name="fcidade" maxlength="28" id="cidade">           
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div clas="form-row">
+                <div class="form-group col-md-3">
+                    <label class="label-default" for="estado">Estado</label>
+                    <select class="form-control" name="festado" id="estado"></select>
+                </div>
+            </div>
         </div>
 
         <!--div class form-group -->
@@ -52,10 +69,8 @@
         <!-- 
             
             
-            <label for="cidade">Cidade</label>
-            <input type="text" required="required" name="cidade" maxlength="28" id="cidade">
-            <label for="estado">Estado</label>
-            <select  required="required" name="estado" id="estado"></select>
+            
+            
             <p>Tipo</p>
             <label for="casa"><input type="radio" name="casa" value="casa" id="casa">Casa</label>
             <label for="apartamento"><input type="radio" name="apartamento" value="apartamento" id="partamento">Apartamento</label>
