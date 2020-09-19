@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="./script.js"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+    <!--cabeçalho-->
+    <header>
+        <h1>Exercício do dia</h1>
+    </header>
+    <!--formulario-->
+    <form name="myForm" action="localhost:5001" method="GET" enctype="multipart/form-data" onsubmit="return validateForm()">
+        <!--nome type text-->
+            <label  for="nome">Nome</label>
+            <input  type="text" name="fnome" maxlength="40" id="nome">
+        <!--e-mail type text-->
+            <label  for="email">E-mail</label>
+            <input  type="text" name="email" maxlength="50" placeholder="Digite seu e-mail" id="email">
+        <!--cpf type number-->
+            <label  for="cpf">CPF</label>
+            <input  type="number" maxlength="11" placeholder="Digite somente números" name="fcpf" id="cpf" onkeyup="limitarInputCpf(this)">
+        <!--endereço type text-->
+            <label  for="endereco">Endereço</label>
+            <input  type="text" maxlength="200" name="fendereco" id="endereco">
+        <!--cidade type text-->
+            <label  for="cidade">Cidade</label>
+            <input  type="text" name="fcidade" maxlength="28" id="cidade">           
+        <!--Estado type select-->
+            <label  for="estado">Estado</label>
+            <select name="festado" id="estado"></select>
+        <!--tipo de casa type radio-->
+            <label for="">Tipo
+            <input  type="radio" name="fradiosCasa" id="casa">
+            <label>Casa</label>
+            <input  type="radio" name="fradiosApartamento" id="apartamento">
+            <label>Apartamento</label>
+        <!--resumo de curriculum type textarea-->
+            <label for="resumoCurriculum">Resumo do curriculum</label>
+            <textarea id="resumoCurriculum" name="fresumoCurriculum" maxlength="1000" placeholder="Digite o resumo em 1000 caracteres"></textarea>
+        <!--Digite cargo type text-->
+            <label>Cargo</label>
+            <input type="text" placeholder="Digite o seu cargo" name="fcargo" maxlength="40" id="">
+        <!--Descrição cargo type text-->
+            <label  for="descricaoCargo">Descrição do cargo</label>
+            <input type="text" name="fdescricaoCargo" maxlength="500" id="descricaoCargo">   
+        <!--data type text-->
+            <label>Data de inicio</label>
+            <input type="text" placeholder="dd/mm/yyyy" pattern="([12][0-9]|0?[1-9]|3[01])/(0?[1-9]|1[012])/\d{4}" name="fdata" id="data">        
+        <!--data type submit/btn-->
+            <input type="submit" value="Submit" id="btnSubmit" onclick="preventDefault()">
+        <!--data type btn-->
+            <input type="reset" value="Reset" id="btnReset">
+    </form>
+</body>
+</html>
