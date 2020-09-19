@@ -24,9 +24,25 @@ function validateForm () {
         alert("City must be filled out");
         return false;
     }
-    let festado = (document.querySelectorAll(".estados")[0].value)
-    if (festado == 0) {
+    let estado = document.forms["myForm"]["festado"].value;
+    if (estado == 0) {
         alert("State must be filled out");
+        return false;
+    }
+
+    let resumoCurriculum = document.forms["myForm"]["fresumoCurriculum"].value;
+    if (resumoCurriculum == null || resumoCurriculum == '') {
+        alert("Resume curriculum must be filled");
+        return false;
+    }
+    let cargo = document.forms["myForm"]["fcargo"].value;
+    if (cargo == null || cargo == '') {
+        alert("Job must be filled");
+        return false;
+    }
+    let descricaoCargo = document.forms["myForm"]["fdescricaoCargo"].value;
+    if (descricaoCargo == null || descricaoCargo == '') {
+        alert("Job description must be filled");
         return false;
     }
 }
