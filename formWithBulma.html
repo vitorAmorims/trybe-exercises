@@ -4,25 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./bulma-0.9.0/css/bulma.min.css" type="text/css">
     <script type="text/javascript" src="./script.js"></script>
-    <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
     <!--cabeçalho-->
     <header>
-        <h1>Exercício do dia</h1>
+        <h1 class="title">Exercício do dia</h1>
     </header>
     <!--formulario-->
     <form name="myForm" action="localhost:5001" method="GET" enctype="multipart/form-data" onsubmit="return validateForm()">
-        <!--nome type text-->
-            <label  for="nome">Nome</label>
-            <input  type="text" name="fnome" maxlength="40" id="nome">
+        <div class="field">
+          <label class="label">Nome</label>
+          <div class="control">
+            <input class="input" type="text" name="fnome" maxlength="40" id="nome">
+          </div>
+        </div>
+        
+        <div class="field">
+          <label class="label" for="">E-mail</label>
+          <div class="control">
+            <input class="input"  type="text" name="email" maxlength="50" placeholder="Digite seu e-mail" id="email">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">CPF</label>
+          <div class="control">
+            <input class="input" type="number" maxlength="11" placeholder="Digite somente números" name="fcpf" id="cpf" onkeyup="limitarInputCpf(this)">
+          </div>
+        </div>
+
+        <!--div class field-->
+          <!-- label class label e fecha label-->
+          <!-- div class control-->
+            <!-- input class input-->
         <!--e-mail type text-->
-            <label  for="email">E-mail</label>
-            <input  type="text" name="email" maxlength="50" placeholder="Digite seu e-mail" id="email">
-        <!--cpf type number-->
-            <label  for="cpf">CPF</label>
-            <input  type="number" maxlength="11" placeholder="Digite somente números" name="fcpf" id="cpf" onkeyup="limitarInputCpf(this)">
+            
+        
         <!--endereço type text-->
             <label  for="endereco">Endereço</label>
             <input  type="text" maxlength="200" name="fendereco" id="endereco">
