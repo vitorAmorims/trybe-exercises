@@ -43,13 +43,13 @@
       <div class="field">
         <label class="label" for="">E-mail</label>
         <div class="control">
-          <input class="form_input form-control"  type="text" name="email" maxlength="50" placeholder="Digite seu e-mail" id="email">
+          <input data-validate-field="email"  class="form_input form-control"  type="text" name="email" maxlength="50" placeholder="Digite seu e-mail" id="email">
         </div>
       </div>
       <div class="field">
         <label class="label">CPF</label>
         <div class="control">
-          <input class="form_input form-control" type="number" maxlength="11" placeholder="Digite somente números" name="cpf" id="cpf">
+          <input data-validate-field="cpf" class="form_input form-control" type="number" maxlength="11" placeholder="Digite somente números" name="cpf" id="cpf">
         </div>
       </div>
 
@@ -196,25 +196,34 @@ $.fn.bootstrapDP = datepicker;
 window.onload = function () {
     inserirEstados (estadosDoBrasil);
     new window.JustValidate('.js-form', {
-    rules: {
+      rules: {
       nome: {
         required: true,
-        maxLength: 40
-      }
+        maxlength: 40
+      },
+      email: {
+        required: false,
+        email: true
+      },
+      cpf: {
+        required: true,
+        maxlength: 11
+      },
+      
     },
     messages: {
-      nome: {
-        required: 'O campo nome é obrigatório',
-        maxLength: 'Máximo 40 caracteres'
-      },
-    },
-      
+      nome: {required: 'Por favor, digite seu nome.'},
+      email: {email: 'Por favor, digite e-mail válido.'},
+      cpf: {required: 'Por favor, digite somente numeros.'},
 
+    },
+          
     submitHandler: function (form, values) {
       console.log(form, values)
     },
   });
 }
+
 
 
 
