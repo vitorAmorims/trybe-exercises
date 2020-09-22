@@ -1,0 +1,46 @@
+/*flexboxfroggy.com*/
+
+/*level 14*/
+.yellow {
+    order: 2;
+}
+
+/*level 15*/
+.red {
+    order: -1;
+}
+
+/*level 16*/
+.yellow {
+    align-self: flex-end;
+}
+
+/*level 17*/
+.yellow {
+    order: 5;
+    align-self: flex-end;
+}
+
+/*level 18*/
+flex-wrap: wrap;
+
+/*level 19*/
+flex-direction: column;
+flex-wrap: wrap;
+
+/*level 20*/
+flex-flow: column wrap;
+
+/*level 21*/
+align-content: flex-start;
+
+/*level 22*/
+align-content: flex-end;
+
+/*level 23*/
+flex-direction: column-reverse;
+align-content: center;
+
+/*level 24*/
+flex-flow: column-reverse wrap-reverse;
+place-content: space-between center;
