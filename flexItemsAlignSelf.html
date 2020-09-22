@@ -17,21 +17,26 @@
             border: 2px solid gray;
             border-radius: 5px;
         }
-        /*exemplo para selecionar elementos flex-itens e alterar propriedades order*/
+        /*flex-itens order para ordenar as div(s)*/
+        /*flex-itens align-self para alinhamento as div(s)*/
         .flex-container > .box:nth-child(1) {
-            order: 3;
+            order: 1;
+            align-self: center;
         }
 
         .flex-container > .box:nth-child(2) {
-            order: 4;
+            order: 2;
+            align-self: flex-end; 
         }
 
         .flex-container > .box:nth-child(3) {
-            order: 1;
+            order: 3;
+            align-self: flex-start;
         }
 
         .flex-container > .box:nth-child(4) {
-            order: 2;
+            order: 4;
+            align-self: baseline;
         }
     </style>
 </head>
