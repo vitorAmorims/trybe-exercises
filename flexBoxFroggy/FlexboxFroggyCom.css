@@ -1,0 +1,48 @@
+/*https://flexboxfroggy.com/*/
+
+/*level 1*/
+justify-content: flex-end;
+
+/*level 2*/
+justify-content: center;
+
+/*level 3*/
+justify-content: space-around;
+
+/*level 4*/
+justify-content: space-between;
+
+/*level 5*/
+align-items: flex-end;
+
+/*level 6*/
+justify-content: center;
+align-items: center;
+
+/*level 7*/
+justify-content: space-around;
+align-items: flex-end;
+
+/*level 8*/
+flex-direction: row-reverse;
+
+/*level 9*/
+flex-direction: column;
+
+/*level 10*/
+flex-direction: row-reverse;
+justify-content: flex-end;
+
+/*level 11*/
+flex-direction: column;
+justify-content: flex-end;
+
+/*level 12*/
+flex-flow: column-reverse;
+justify-content: space-between;
+
+/*level 13*/
+flex-direction: row-reverse;
+justify-content: center;
+align-items: flex-end;
+
