@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.div-container{
+    display: flex;
+    justify-content: center;
+}  
+@media screen and (max-width: 900px) and (min-width: 600px) {
+  div.example {
+    font-size: 50px;
+    padding: 50px;
+    border: 8px solid black;
+    background: yellow;
+    }
+    div.example1 {
+      display: none;
+    }
+}
+@media screen and (min-width: 901px) and (max-width: 1100px){ 
+    div.example {
+    font-size: 50px;
+    padding: 50px;
+    border: 8px solid black;
+    background: blue;
+    }
+    div.example1 {
+      display: none;
+    }
+}
+@media screen and (max-width: 599px) {
+    div.example {
+    font-size: 50px;
+    padding: 50px;
+    border: 8px solid black;
+    background: red;
+    }
+    div.example1 {
+      display: none;
+    } 
+}
+@media screen and (min-width: 1101px) and (max-width: 1200px) {
+    div.example {
+    font-size: 50px;
+    color: white;
+    padding: 50px;
+    border: 8px solid black;
+    background: yellow;
+    }
+    div.example1 {
+    font-size: 50px;
+    color: white;
+    padding: 50px;
+    border: 8px solid white;
+    background: black;
+    } 
+}
+</style>
+</head>
+<body>
+
+<h2>Change the appearance of DIV on different screen sizes</h2>
+<div class="div-container">
+    <div class="example">DIV-1</div>
+    <div class="example1">DIV-2</div>
+</div>
+
+<p>When the browser's width is betweens px, change the appearance of DIV. 
+<strong>Resize the browser window to see the effect</strong>.</p>
+
+</body>
+</html>
