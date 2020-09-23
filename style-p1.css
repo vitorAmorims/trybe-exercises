@@ -16,6 +16,7 @@
     background: #f00;
     display: flex;
 }
+/*
 @media screen and (min-width: 375px) and (max-width: 812px){
     .centro {
         width: 100%;
@@ -47,4 +48,4 @@
     color: silver;
     justify-content: baseline;
   }
-}
+}*/
