@@ -1,0 +1,43 @@
+body {
+    height: 80%;
+    font-size: 2em;
+    border: 1px solid black;
+}
+
+h1 {
+    font-size: 1em;
+
+}
+
+p {
+    font-size: 30px;
+}
+
+img {
+    max-width: 100%;
+}
+
+figure {
+    margin: 1.5em;
+}
+
+.figures {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+@media screen and (min-width: 798px) {
+    body {
+        background-color: blue;
+        width: 100%;
+        margin: 0.5em 0.5em;
+    }
+    p {
+        font-size: 32px;
+    }
+    .figures figure {
+        align-items: center;
+    }
+    
+}
