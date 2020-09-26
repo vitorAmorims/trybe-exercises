@@ -27,3 +27,7 @@ const biggestWord = (longestWord) => {
     return console.log(result);
 }
 biggestWord(longestWord);
+
+//Arrow function 1 llinha
+const longestWord1 = text => text.split(' ').sort((wordA, wordB) => wordB.length - wordA.length)[0]
+console.log(longestWord1("Antonio foi no banheiro e não sabemos o que aconteceu"))
