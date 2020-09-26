@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="button">Clique aqui</button>
+    <script type="text/javascript">
+        const button = document.getElementById("button");
+        let p = document.createElement("p")
+        document.body.appendChild(p)
+        let soma  = 0;    
+        
+        button.addEventListener("click", () => {
+            let numero = 1;
+            soma +=  numero;
+            p.innerHTML = soma;
+        })
+    </script>
+    
+</body>
+</html>
