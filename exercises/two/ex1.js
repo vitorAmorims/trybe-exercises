@@ -161,3 +161,34 @@ const somarAlunasAulaHistoria = (objeto) => {
     return total;
 }
 console.log(somarAlunasAulaHistoria(allLessons));
+
+/*
+Crie uma função que deverá retornar um objeto que representa o relatório do professor 
+ou professora, as aulas que ele ou ela ministrou e o número total de estudantes. 
+Use o objeto criado no exercício 5:
+*/
+function relatorioProfessor (objeto, nome) {
+let relatorio = {};
+let aulas = [];
+let total = 0;
+let array = Object.keys(allLessons);
+for (i in array) {
+    if (objeto[array[i]].professor === nome){
+        total += objeto[array[i]].numeroEstudantes;
+        aulas.push(objeto[array[i]].materia);
+        for (let i = 0; i < aulas.length - 1; i++) {
+            for (let j = i + 1; j < aulas.length; j++) {
+                if (aulas[i] === aulas[j]) {
+                    aulas.pop();
+                }
+            }
+        }
+        relatorio.professor = nome;
+        relatorio.materia = aulas;
+        relatorio.estudantes = total;
+    }
+}
+return console.log(relatorio);
+}
+relatorioProfessor (allLessons, "Carlos")
+// console.log(allLessons);
