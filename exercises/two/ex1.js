@@ -135,3 +135,29 @@ const verificarPair1 = (objeto, chave, valor) => {
     }
 }
 verificarPair1(lesson1, "materia", "Matemática");
+
+/*Crie uma função para contar quantos estudantes assistiram às aulas de Matemática. 
+Use o objeto criado no exercício 5.*/
+function somarAlunasAulaMatematica (objeto) {
+    let total = 0;
+    let array = Object.keys(allLessons);
+    for ( i in array) {
+        if (objeto[array[i]].materia === "Matemática") {
+            total += objeto[array[i]].numeroEstudantes;
+        }
+    }
+    return total;
+}
+console.log(somarAlunasAulaMatematica(allLessons, "Matemática"));
+
+const somarAlunasAulaHistoria = (objeto) => {
+    let total = 0;
+    let array = Object.keys(allLessons);
+    for ( i in array) {
+        if (objeto[array[i]].materia === "História") {
+            total += objeto[array[i]].numeroEstudantes;
+        }
+    }
+    return total;
+}
+console.log(somarAlunasAulaHistoria(allLessons));
