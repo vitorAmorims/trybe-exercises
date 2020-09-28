@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos para object</title>
+</head>
+<body>
+    <h1>Nesta aula, estarei aprendendo sobre os métodos para objeto.</h1>
+    <script type="text/javascript">
+        //exemplo, criação do objeto
+        const geladeira = {};
+        //exemplo: inserindo keys and values for object
+        geladeira.marca = "Brastemp";
+        geladeira.cor = "Branco";
+        //visualização do object com chaves e valores;
+        console.log(geladeira);
+
+        //function para alimentar o object
+        function alimentarObjeto (geladeira, keys, values) {
+            let newKeys = keys;
+            let newValues = values;
+            geladeira[newKeys] = newValues;
+        }
+        alimentarObjeto(geladeira, "voltagem", "110V");
+        console.log(geladeira);
+
+        //for in no objeto geladeira
+        for (teste in geladeira) {
+            console.log(geladeira[teste]);
+        }
+
+        //métodos
+        console.log(Object.keys(geladeira)); //retorno de array com keys do objeto geladeira.
+
+        console.log(Object.values(geladeira)); //retorno de array com values do objeto geladeira.
+        
+        console.clear();
+
+        /* agora vamos estudar este novo objeto  */
+        const student = {
+        Html: 'Muito Bom',
+        Css: 'Bom',
+        JavaScript: 'Ótimo',
+        SoftSkill: 'Ótimo',
+        };
+        
+        //obtendo values do objeto student com loop for in
+        const listSkills = (student) => {
+            const skills = [];
+            for (skill in student) {
+                skills.push(student[skill]);
+            }
+            console.log(skills);
+        }
+        listSkills(student);
+        
+        //obtendo array com values do objeto student
+        const newListSkills = Object.values(student);
+        console.log(newListSkills);
+        
+        console.clear();
+
+        //parte 4 Object.entries  keys valuues
+        const países = {
+        França: 'Paris',
+        Brasil: 'Brasília',
+        Espanha: 'Madrid',
+        Portugal: 'Lisboa',
+        };
+
+        /* prototype Array */
+        //return array com 4 arrays
+        console.log(Object.entries(países));
+
+        /*atribuição de variável com Object.entries*/
+        const pairKeyValues = Object.entries(países) 
+
+        //observo comportamento de array para variável pairKeyValues
+        for (i in pairKeyValues){
+            console.log('Pais ' + pairKeyValues[i][0]); //chamando primeiro keys no console
+            console.log('Capital ' + pairKeyValues[i][1]); //chamando values no segundo console.
+        }
+               
+
+        /* prototype Map  com este método consigo obter keys and values, 
+        sem necessidade de criar variavel para depois fazer loop for in e obter a saida em tela.
+        */
+        //return map com  keys and values do objeto paises;
+        const map = new Map(Object.entries(países)); 
+        console.log(map);
+        console.clear();
+
+        //parte 5 Object.assign
+        
+        /* A função recebe um número qualquer de parâmetros. 
+        Todos são agregados como valores para adicionar ao objeto de destino!*/
+        //exemplos abaixo:
+
+        // Object.assign(destino, objeto1);
+        // Object.assign(destino, objeto1, objeto2);
+        // Object.assign(destino, objeto1, objeto2, objeto3, objeto4);
+
+        const person = {
+            name: 'Vitor',
+            lastname: 'Amorim',
+            age: 38
+        }
+        const info = {
+            info: "dev full time"
+        }
+        const family = {
+            children: "Lucas",
+            wife: "Silvia"
+        }
+        Object.assign(person, info, family);
+        console.log(person);
+
+        //clone do object person
+        const clone = Object.assign(person, info, family);
+        console.log(clone);
+        /*
+        Como pôde ver acima, o clone é exatamente igual ao objeto person, e se 
+        você mudar qualquer propriedade nele, observará que o objeto person 
+        também será modificado. Isso ocorre devido ao fato de que o objeto retornado 
+        pelo método Object.assign é o próprio objeto destino, que foi alterado adicionando 
+        as novas propriedades.
+        Que tal fazer um teste para confirmar isso?*/
+        clone.age = 18;
+        console.log(person); //incrivel, alterando a prop do objeto clone, alterou a prop do objeto origem
+        console.clear();
+
+        /*como faremos para mudar os dados do novo objeto criado 
+        sem modificar o objeto inicial?
+
+        Para resolver esse problema, 
+        podemos passar como primeiro parâmetro do Object.assign um objeto vazio {} 
+        e armazenar seu retorno em uma nova variável.*/
+        const newClone =  Object.assign({}, person, info, family);
+        newClone.age = 10; //setando clone 
+        console.log(newClone);
+        console.log(person); //não houve mudança no objeto origem.
+        
+
+    </script>
+</body>
+</html>
