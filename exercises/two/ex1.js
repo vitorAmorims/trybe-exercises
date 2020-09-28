@@ -66,3 +66,26 @@ sendo essas chaves: lesson1, lesson2 e lesson3.
 Ao executar o comando console.log(allLessons), a saída deverá ser todas lessons*/
 let allLessons = Object.assign({}, {lesson1}, {lesson2}, {lesson3});
 console.log(allLessons);
+
+/*Usando o objeto criado no exercício 5, 
+crie uma função que retorne o número total de estudantes em todas as aulas.
+*/
+function totalEstudantes (objeto) {
+    let total = 0;
+    let array = Object.keys(objeto)
+    for (i in array) {
+        total += objeto[array[i]].numeroEstudantes;
+    }
+    return total;
+}
+console.log(totalEstudantes(allLessons));
+
+const totalEstudantes1 = (objeto) => {
+    let total = 0;
+    let array = Object.keys(objeto)
+    for (i in array) {
+        total += objeto[array[i]].numeroEstudantes;
+    }
+    return total;
+}
+console.log(totalEstudantes1(allLessons));
