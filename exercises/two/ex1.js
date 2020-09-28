@@ -89,3 +89,22 @@ const totalEstudantes1 = (objeto) => {
     return total;
 }
 console.log(totalEstudantes1(allLessons));
+
+/*
+Crie uma função que obtenha o valor da chave de acordo com a sua posição no objeto.
+*/
+function valorChavePosicao (objeto) {
+    let array = Object.values(objeto)
+    for (i in array) {
+        console.log(array[i]);
+    }
+}
+valorChavePosicao(lesson2)
+
+const valorChavePosicao1 = (objeto) => {
+    let array = Object.values(objeto)
+    for (i in array) {
+        console.log(array[i]);
+    }
+}
+valorChavePosicao1(lesson1)
