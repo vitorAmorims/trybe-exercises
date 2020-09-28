@@ -40,3 +40,12 @@ function listarKeys (objeto) {
     console.log(keys)
 }
 listarKeys(lesson2)
+
+/*
+Crie uma função para mostrar o tamanho de um objeto.
+*/
+function tamanhoObjeto (objeto) {
+    let lengthObjeto = Object.entries(objeto).length;
+    console.log(lengthObjeto);
+}
+tamanhoObjeto(lesson2);
