@@ -10,6 +10,8 @@ function myFizzBuzz(num) {
 // implemente seus testes aqui
 assert.strictEqual(typeof myFizzBuzz, 'function');
 
+//assert.deepStrictEqual(actual, expected[, message])
+
 //1- Faça uma chamada com um número divisível por 3 e 5 e verifique se o retorno é o esperado
 assert.deepStrictEqual(myFizzBuzz(15), 'fizzbuzz', "Mensagem de erro para ex1");
 
