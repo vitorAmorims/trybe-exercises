@@ -20,3 +20,9 @@ assert.deepStrictEqual(myRemoveWithoutCopy([1, 2, 3, 4], 3), [1,2,4], "mensagem 
 
 //2 - Verifique se a chamada myRemoveWithoutCopy([1, 2, 3, 4], 3) não retorna o array [1, 2, 3, 4]
 assert.notDeepStrictEqual(myRemoveWithoutCopy([1, 2, 3, 4], 3), [1,2, 3, 4], "Mensagem de erro para questão 2");
+
+//3 - Faça uma chamada para a função myRemoveWithoutCopy 
+//e verifique se o array passado por parâmetro sofreu alterações
+let array = [1,2,3,4,5];
+myRemoveWithoutCopy(array, 5);
+assert.deepStrictEqual(myRemoveWithoutCopy(array, 5), [1, 2, 3, 4], "Mensagem de erro questão 3");
