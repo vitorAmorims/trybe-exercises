@@ -26,3 +26,6 @@ assert.notDeepStrictEqual(myRemoveWithoutCopy([1, 2, 3, 4], 3), [1,2, 3, 4], "Me
 let array = [1,2,3,4,5];
 myRemoveWithoutCopy(array, 5);
 assert.deepStrictEqual(myRemoveWithoutCopy(array, 5), [1, 2, 3, 4], "Mensagem de erro questão 3");
+
+//4 - Verifique se a chamada myRemoveWithoutCopy([1, 2, 3, 4], 5) retorna o array esperado
+assert.deepStrictEqual(myRemoveWithoutCopy([1, 2, 3, 4], 5), [1, 2, 3, 4], "Mensagem de erro questão 4");
