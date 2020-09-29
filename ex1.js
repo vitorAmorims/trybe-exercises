@@ -9,3 +9,6 @@ function sum(a, b) {
 }
 
 // implemente seus testes aqui
+assert.strictEqual(typeof sum, 'function');
+//Teste se o retorno de sum(4, 5) é 9
+assert.equal(sum(4, 5), 9);
