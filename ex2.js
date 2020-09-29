@@ -17,7 +17,7 @@ assert.strictEqual(typeof myRemove, 'function');
 assert.deepStrictEqual(myRemove([1,2,3,4], 3), [1,2,4]);
 
 //2 - Verifique se a chamada myRemove([1, 2, 3, 4], 1) não retorna o array [1, 2, 3, 4]
-assert.notDeepStrictEqual(myRemove([1,2,3,4],3),[1, 2, 3, 4]);
+assert.notDeepStrictEqual(myRemove([1,2,3,4],3),[1, 2, 3, 4],"mensagem de erro");
 
 /* teste com método assert*/
 // var x = { a : { n: 0 } };
