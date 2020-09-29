@@ -25,6 +25,8 @@ let array = [1, 2, 3, 4];
 //detalhe o ex. pede array passado por parâmetro não alterações;
 assert.deepStrictEqual(myRemove(array, [1, 2, 3, 4]), [1, 2, 3, 4], "Mensagem de erro do ex 3");
 
+//4 - Verifique se a chamada myRemove([1, 2, 3, 4], 5) retorna o array esperado
+assert.deepStrictEqual(myRemove([1, 2, 3, 4], 5), [1, 2, 3, 4], "Mensagem de erro do ex 4");
 
 /* teste com método assert*/
 // var x = { a : { n: 0 } };
