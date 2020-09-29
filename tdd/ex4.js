@@ -17,10 +17,10 @@ assert.throws(findTheNeedle, 'function');
 let output = findTheNeedle(words, 'needle');
 assert.strictEqual(output, expected);
 
-// words = ['plant', 'shelf', 'arrow', 'bird'];
-// expected = 0;
-// output = findTheNeedle(words, 'plant');
-// assert.strictEqual(output, expected);
+words = ['plant', 'shelf', 'arrow', 'bird'];
+expected = 0;
+output = findTheNeedle(words, 'plant');
+assert.strictEqual(output, expected);
 
 // words = ['plant', 'shelf', 'arrow', 'bird'];
 // expected = -1;
