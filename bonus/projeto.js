@@ -62,7 +62,16 @@ function getChange(payable, paid) {
     remaining -= nota1 * coins[7];
     change.push(nota200*coins[0],nota100*coins[1], nota50*coins[2], nota20*coins[3], nota10*coins[4], nota5*coins[5], nota2*coins[6], nota1*coins[7]);
   }
-  return change;
+  // for (let i = 0; i < change.length; i++) {
+  //   if (change[i] === 0) {
+  //     console.log(i);
+  //   }
+  // }
+  let resultado = change.filter(function(item) {
+    return item !== 0;
+  });
+  
+  return resultado;
 }
 
 /*
