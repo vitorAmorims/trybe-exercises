@@ -1,5 +1,6 @@
 /*Use a variável parameter como parâmetro da função abaixo, escreva testes para verificar se a mesma está retornando como se vê na variável result e, caso não esteja, altere o código para que ele passe nos testes.*/
-const assert = require('assert')
+const assert = require('assert');
+const { type } = require('os');
 function secondThirdSmallest(array) {
     let results = []
     for (let i = 0; i < array.length; i++) {
@@ -26,3 +27,4 @@ adicionado módulo assert
 segundo fazer executar a função
 */
 console.log(secondThirdSmallest(parameter)); 
+assert.strictEqual(typeof(secondThirdSmallest), 'function');
