@@ -60,7 +60,7 @@ function getChange(payable, paid) {
     remaining -= nota2 * coins[6];
     nota1 = Math.floor(remaining / coins[7]);
     remaining -= nota1 * coins[7];
-    change.push(nota200,nota100, nota50, nota20, nota10, nota5, nota2, nota1);
+    change.push(nota200*coins[0],nota100*coins[1], nota50*coins[2], nota20*coins[3], nota10*coins[4], nota5*coins[5], nota2*coins[6], nota1*coins[7]);
   }
   return change;
 }
