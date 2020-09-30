@@ -2,7 +2,7 @@
 const assert = require('assert');
 const { type } = require('os');
 function secondThirdSmallest(array) {
-    if (typeof (array) === 'string') {
+    if (typeof (array) === 'string' || typeof (array) === 'number' || typeof (array) === 'undefined') {
         throw new Error ("Por favor, insira um array com elementos number!")
     }
     let results = []
@@ -32,9 +32,13 @@ const result = [5, 6];
 4 - adicionado teste para verificar a função está retornando o resultado esperado.
 5 - ao adicionar string como parametro, forcei o retorno da função com erro no teste.
 6 - inseri condição para analisar o typeof string com retorno de mensagem de erro.
+7 - adicionei teste para tratar o param string na função secondThirdSmallest. 
 */
  
 assert.strictEqual(typeof(secondThirdSmallest), 'function');
 assert.deepStrictEqual(secondThirdSmallest(parameter), result);
-assert.deepStrictEqual(secondThirdSmallest('a'), result); //forcei o erro da função
-// console.log(secondThirdSmallest(parameter));
+// assert.deepStrictEqual(secondThirdSmallest('a'), result); //forcei o erro da função
+console.log(secondThirdSmallest());
+assert.throws(() => {
+    secondThirdSmallest('a');
+});
