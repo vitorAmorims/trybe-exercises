@@ -26,5 +26,6 @@ const result = [5, 6];
 adicionado módulo assert
 segundo fazer executar a função
 */
-console.log(secondThirdSmallest(parameter)); 
+// console.log(secondThirdSmallest(parameter)); 
 assert.strictEqual(typeof(secondThirdSmallest), 'function');
+assert.deepStrictEqual(secondThirdSmallest(parameter), result);
