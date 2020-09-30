@@ -2,9 +2,16 @@
 const assert = require('assert')
 function secondThirdSmallest(array) {
     let results = []
-    array.sort(function (x, y) {
-        return x + y;
-    });
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array.length; j++) {
+            let x;
+            if (array[i] < array[j]) {
+                x = array[i];
+                array[i] = array[j];
+                array[j] = x;
+            }
+        }
+    }
     results.push(array[1],array[2]);
     return results;
 };
@@ -18,4 +25,4 @@ const result = [5, 6];
 adicionado módulo assert
 segundo fazer executar a função
 */
-secondThirdSmallest(parameter); 
+console.log(secondThirdSmallest(parameter)); 
