@@ -35,8 +35,11 @@ Se uma pessoa comprar itens com valor total igual a R$2,15 (ou seja, 215) e paga
 Finalize a implementação da função getChange(payable, paid).
 payable é o valor a ser pago, ou o valor total
 paid é o valor que a pessoa pagou*/
-
+const assert = require('assert');
 function getChange(payable, paid) {
+  if (typeof(payable) !== 'number' || typeof(paid) !== 'number') {
+    throw "Parâmetro inválida para executar a função!";
+  }
   const coins = [200, 100, 50, 20, 10, 5, 2, 1];
   const change = [];
   const { length } = coins;
@@ -70,16 +73,17 @@ function getChange(payable, paid) {
   let resultado = change.filter(function(item) {
     return item !== 0;
   });
-  
   return resultado;
 }
 
 /*
 1 - entender o que está pedindo.
 2 - executar a função do jeito que ela está, retornou array vazio.
+3 - corrigir a função e seu respectivo retorno.
+4 - inserido módulo assert
 */
-console.log(getChange(2.25, 3));
-
-/*
-logica:  dado o valor do troco, a máquina retorna uma lista com as moedas que ela devolverá para a pessoa.
-*/
+console.log(getChange(2.15, 3));
+assert.strictEqual(typeof(getChange), 'function');
+assert.throws(() => {
+  getChange('a','a');
+})
