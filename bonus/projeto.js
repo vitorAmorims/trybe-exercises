@@ -40,9 +40,28 @@ function getChange(payable, paid) {
   const coins = [200, 100, 50, 20, 10, 5, 2, 1];
   const change = [];
   const { length } = coins;
-  let remaining = paid - payable;
-
+  let remaining = (paid*100) - (payable*100);
+  let nota200,nota100, nota50, nota20, nota10, nota5, nota2, nota1;
   // escreva seu código aqui...
+  while (remaining !== 0) {
+    nota200 = Math.floor(remaining / coins[0]);
+    remaining -= nota200 * coins[0];
+    nota100 = Math.floor(remaining / coins[1]);
+    remaining -= nota100 * coins[1];
+    nota50 = Math.floor(remaining / coins[2]);
+    remaining -= nota50 * coins[2];
+    nota20 = Math.floor(remaining / coins[3]);
+    remaining -= nota20 * coins[3];
+    nota10 = Math.floor(remaining / coins[4]);
+    remaining -= nota10 * coins[4];
+    nota5 = Math.floor(remaining / coins[5]);
+    remaining -= nota5 * coins[5];
+    nota2 = Math.floor(remaining / coins[6]);
+    remaining -= nota2 * coins[6];
+    nota1 = Math.floor(remaining / coins[7]);
+    remaining -= nota1 * coins[7];
+    change.push(nota200,nota100, nota50, nota20, nota10, nota5, nota2, nota1);
+  }
   return change;
 }
 
@@ -51,3 +70,7 @@ function getChange(payable, paid) {
 2 - executar a função do jeito que ela está, retornou array vazio.
 */
 console.log(getChange(2.25, 3));
+
+/*
+logica:  dado o valor do troco, a máquina retorna uma lista com as moedas que ela devolverá para a pessoa.
+*/
