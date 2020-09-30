@@ -17,3 +17,4 @@ const result = [32, 21];
 // console.log(greaterThanTen(parameter));
 assert.strictEqual(typeof greaterThanTen,'function');
 assert.deepStrictEqual(greaterThanTen(parameter), result);
+assert.notDeepStrictEqual(greaterThanTen(parameter, [30]))
