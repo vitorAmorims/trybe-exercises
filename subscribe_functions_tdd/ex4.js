@@ -2,7 +2,7 @@
 const assert = require('assert');
 const { type } = require('os');
 function secondThirdSmallest(array) {
-    if (typeof (array) === 'string' || typeof (array) === 'number' || typeof (array) === 'undefined' || typeof (array) === 'object') {
+    if (typeof (array) !== 'object') {
         throw new Error ("Por favor, insira um array com elementos number!")
     }
     let results = []
@@ -35,12 +35,13 @@ const result = [5, 6];
 7 - adicionei teste para tratar o param string na função secondThirdSmallest. 
 8 - adicionado teste para tratar o param number ou undefined.
 9 - adicionado teste para tratar o param object.
+10 - adicionado teste para tipo de dados diferente de object, removidos os outros testes desnecessários.
 */
 let carro = {}; 
 assert.strictEqual(typeof(secondThirdSmallest), 'function');
 assert.deepStrictEqual(secondThirdSmallest(parameter), result);
 // assert.deepStrictEqual(secondThirdSmallest('a'), result); //forcei o erro da função
-console.log(secondThirdSmallest(carro));
+// console.log(secondThirdSmallest('a'));
 assert.throws(() => {
     secondThirdSmallest('a');
 });
