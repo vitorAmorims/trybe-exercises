@@ -46,4 +46,8 @@ function getChange(payable, paid) {
   return change;
 }
 
-//1 - entender o que está pedindo.
+/*
+1 - entender o que está pedindo.
+2 - executar a função do jeito que ela está, retornou array vazio.
+*/
+console.log(getChange(2.25, 3));
