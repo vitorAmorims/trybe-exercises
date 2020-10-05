@@ -65,6 +65,18 @@ const books = [
 
 const expected_result = true
 //Faça uma função que retorne true, se algum livro foi lançado na década de 80, e false, caso contrário.
+function verificarLancamento () {
+    let retorno;
+    for (let i in books) {
+        if (Object.values(books)[i].releaseYear >= 1980 && Object.values(books)[i].releaseYear < 1990) {
+            retorno = true;
+            break;
+        } else {
+            retorno = false;
+        }
+    }
+    return retorno;
+}
 
 function someBookWasReleaseOnThe80s() {
   return books.some(book => (
@@ -73,3 +85,4 @@ function someBookWasReleaseOnThe80s() {
 }
 
 assert.equal(someBookWasReleaseOnThe80s(), expected_result);
+assert.strictEqual(verificarLancamento(), expected_result);
