@@ -99,5 +99,5 @@ function authorUnique() {
 }
 console.log(authorUnique());
 
-// assert.equal(authorUnique(), expected_result);
-// assert.strictEqual(verificarNascimento(), expected_result); // correto
+assert.equal(authorUnique(), expected_result);
+assert.strictEqual(verificarNascimento(), expected_result); // correto
