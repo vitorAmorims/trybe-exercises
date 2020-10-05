@@ -56,3 +56,29 @@ const listaDeAprovados = listaDePessoas.filter( (aluno) => {
     return aluno.nota >= 100;
 });
 console.log(listaDeAprovados);
+
+const objPeople = [
+    { name: 'José', age: 21 },
+    { name: 'Lucas', age: 19 },
+    { name: 'Maria', age: 16 },
+    { name: 'Gilberto', age: 18 },
+    { name: 'Vitor', age: 15 },
+  ];
+
+const podeVotar = objPeople.filter((pessoas) => {
+    return pessoas.age >= 18;
+});
+console.log(podeVotar);
+
+const menoresDeIdade = objPeople.filter((pessoas) => {
+    return pessoas.age < 18;
+});
+console.log(menoresDeIdade);
+
+const arrayMyStudents = ['Maria', 'Manuela', 'Jorge', 'Ricardo', 'Wilson'];
+const removeStudante = (name, estudante) => {
+    return estudante.filter((estudante) => estudante !== name);
+};
+const novaLista = removeStudante('Jorge', arrayMyStudents);
+console.log(novaLista);
+
