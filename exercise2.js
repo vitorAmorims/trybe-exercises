@@ -100,7 +100,8 @@ function nameAndAge() {
     if (a.age > b.age) {
       return 1;
     }
-  });
+  })
+  .filter((pessoas) => pessoas.age > 30 && pessoas.age < 40)
 }  
 console.log(nameAndAge());
 // assert.deepEqual(nameAndAge(), expected_result);
