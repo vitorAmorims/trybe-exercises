@@ -101,7 +101,7 @@ function nameAndAge() {
       return 1;
     }
   })
-  .filter((pessoas) => pessoas.age > 30 && pessoas.age < 40)
+  .filter((pessoas) => pessoas.age > 30 && pessoas.age < 40) //inclui um filtro para pessoas entre 30 e 40 anos.
 }  
 console.log(nameAndAge());
 // assert.deepEqual(nameAndAge(), expected_result);
