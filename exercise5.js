@@ -10,7 +10,7 @@ const myList = [1, 2, 3];
 const swap = ([a,b,c]) => [c,b,a]; 
 
 
-const swappedList = swap(myList)
+const swappedList = swap(myList) //atribuindo o resultado da função para variavel swappedList
 
 console.log(swappedList[0]) //expected number 3 na posição 0
 console.log(swappedList[1]) //expected number 2 na posição 1
