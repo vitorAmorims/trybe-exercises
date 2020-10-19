@@ -27,4 +27,4 @@ function sendMarsTemperature(onSuccess, onError) {
 toFahrenheit(sendMarsTemperature(temperatureInFahrenheit, handleError));
 
 // imprime "Hi there! Curiosity here. Right now is 53ºC at Mars", por exemplo, ou "Error getting temperature: Robot is busy"
-toCelsius(sendMarsTemperature(greet, handleError));
+sendMarsTemperature(greet, handleError);
