@@ -11,5 +11,15 @@ function verifiedFetch(url) {
     }
   });
 }
-verifiedFetch('https://api.chucknorris.io/jokes/random?category=dev')
-.then(value => console.log(value));
+// verifiedFetch('https://api.chucknorris.io/jokes/random?category=dev')
+// .then(value => console.log(value));
+
+function sendJokeToFriend(name) {
+    const message = verifiedFetch('https://api.chucknorris.io/jokes/random?category=dev')
+      .then((joke) => `Oi ${name}, ouve essa: ${joke}`)
+      .then(console.log)
+      .catch((err) => err);
+    // console.log(message);
+  }
+  
+  sendJokeToFriend("Anna")
