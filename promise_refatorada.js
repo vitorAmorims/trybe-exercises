@@ -2,16 +2,24 @@ function sucesso(number) {
     return `Que sucesso =) nosso número foi ${number}`
 }
 
+function fracassou(number) {
+    return `Fracassou =( nosso número foi ${number}`
+}
+
 const promise = new Promise((resolve, reject) => {
     const number = Math.floor(Math.random() * 11);
   
     if (number > 10 || number <= 5) {
-      return reject(console.log(`Que fracasso =( Nosso número foi ${number}`));
+      return reject(number);
     }
     resolve(number);
   })
-  .then(sucesso) // function declaration 
-  .then(console.log); //como o resultado da function sucesso, já está ali, não há necessidade de inserir parâmetro no console.log
+
+  promise
+  .then(sucesso)
+  .then(console.log)
+  .catch(fracassou)
+  .then(console.log); 
 
 //   Arrow function
 //   .then(number => `Que sucesso =) nosso número foi ${number}`)
