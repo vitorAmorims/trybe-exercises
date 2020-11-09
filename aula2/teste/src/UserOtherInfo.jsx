@@ -1,4 +1,5 @@
 import React, { Component} from 'react';
+import PropTypes from 'prop-types';
 
 class UserOtherInfo extends Component {
     render() {
@@ -6,5 +7,7 @@ class UserOtherInfo extends Component {
         return (<span>{id} {email}</span>)
     }
 }
-
+UserOtherInfo.prototypes = {
+    id: PropTypes.number.isRequired
+}
 export default UserOtherInfo;
