@@ -17,7 +17,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      filter: undefined
+      filter: ''
     }
   }
 
@@ -34,7 +34,7 @@ class App extends Component {
           <input onChange={this.setFilterValue} type="text" />
         </div>
         {data
-        .filter(element => element.color === this.state.filter)
+        .filter(element => element.color.includes(this.state.filter))
         .map(({ color, value }) => {
           return (
             <li key={value}>
