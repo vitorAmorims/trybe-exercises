@@ -13,8 +13,8 @@ class Name extends Component {
           type="text"
           value={ value }
           onChange={ handleChange }
-        />{error ? error : ''}
-        <span></span>
+        />
+        <span>{error ? error : ''}</span>
       </label>
     );
   }
