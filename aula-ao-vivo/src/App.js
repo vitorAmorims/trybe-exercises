@@ -13,6 +13,14 @@ import data from "./data";
 // }
 
 class App extends Component {
+  // começando usar estados aqui dentro
+  constructor(props) {
+    super(props);
+    this.state = {
+      filter: undefined
+    }
+  }
+
   setFilterValue = (event) => {
     console.log(event.target.value);
   };
