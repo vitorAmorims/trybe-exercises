@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import './App.css';
-import data from './data';
+import React, { Component } from "react";
+import "./App.css";
+import data from "./data";
 
 // function App() {
 //   return (
@@ -13,17 +13,24 @@ import data from './data';
 // }
 
 class App extends Component {
+  setFilterValue = (event) => {
+    console.log(event.target.value);
+  };
   render() {
     return (
       <div>
         <div>
-          <input type="text"/>
+          <input onChange={this.setFilterValue} type="text" />
         </div>
-        {data.map(({color, value}) => {
-          return (<li key={value}>{color} coded as {value}</li>);
+        {data.map(({ color, value }) => {
+          return (
+            <li key={value}>
+              {color} coded as {value}
+            </li>
+          );
         })}
       </div>
-    )
+    );
   }
 }
 
