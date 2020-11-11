@@ -29,6 +29,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Aqui vou eu.... :)</h1>
+        <h2>Testando...</h2>
         <button onClick={this.handleClick}>{this.state.numeroDeCliques}</button>
         <button onClick={this.handleClick1}>
           {this.state.numeroDeCliques1}
