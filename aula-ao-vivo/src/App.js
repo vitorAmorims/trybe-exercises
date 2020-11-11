@@ -23,6 +23,9 @@ class App extends Component {
 
   setFilterValue = (event) => {
     console.log(event.target.value);
+    this.setState({
+      filter: event.target.value
+    })
   };
   render() {
     return (
@@ -30,7 +33,9 @@ class App extends Component {
         <div>
           <input onChange={this.setFilterValue} type="text" />
         </div>
-        {data.map(({ color, value }) => {
+        {data
+        .filter(element => element.color === this.state.filter)
+        .map(({ color, value }) => {
           return (
             <li key={value}>
               {color} coded as {value}
