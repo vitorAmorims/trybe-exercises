@@ -1,0 +1,285 @@
+
+https://www.freecodecamp.org/learn/front-end-libraries/redux/define-an-action-creator
+
+ex1 - Define a function named actionCreator() that returns the action object when called.
+
+const action = {
+  type: 'LOGIN'
+}
+
+function actionCreator(action) {
+  return action;
+}
+
+ex2 - The Redux store in the code editor has an initialized state that's an object containing a login property currently set to false. There's also an action creator called loginAction() which returns an action of type LOGIN. Dispatch the LOGIN action to the Redux store by calling the dispatch method, and pass in the action created by loginAction().
+
+
+const store = Redux.createStore(
+  (state = {login: false}) => state
+);
+
+const loginAction = () => {
+  return {
+    type: 'LOGIN'
+  }
+};
+
+// Dispatch the action here:
+store.dispatch(loginAction())
+
+ex3 - The code editor has the previous example as well as the start of a reducer function for you. Fill in the body of the reducer function so that if it receives an action of type 'LOGIN' it returns a state object with login set to true. Otherwise, it returns the current state. Note that the current state and the dispatched action are passed to the reducer, so you can access the action's type directly with action.type.
+
+const defaultState = {
+  login: false
+};
+
+const reducer = (state = defaultState, action) => {
+  // Change code below this line
+switch(action.type) {
+  case 'LOGIN':
+  return state = { login: true };
+  default:
+   return state
+}
+  // Change code above this line
+};
+
+const store = Redux.createStore(reducer);
+
+const loginAction = () => {
+  return {
+    type: 'LOGIN'
+  }
+};
+
+ex4 - Calling the function loginUser should return an object with type property set to the string LOGIN.
+
+Passed
+Calling the function logoutUser should return an object with type property set to the string LOGOUT.
+
+Passed
+The store should be initialized with an object with an authenticated property set to false.
+
+Passed
+Dispatching loginUser should update the authenticated property in the store state to true.
+
+Passed
+Dispatching logoutUser should update the authenticated property in the store state to false.
+
+Passed
+The authReducer function should handle multiple action types with a switch statement.
+
+const defaultState = {
+  authenticated: false
+};
+
+const authReducer = (state = defaultState, action) => {
+  switch(action.type) {
+    case 'LOGIN':
+    return state = { authenticated: true };
+    case 'LOGOUT':
+    return state = { authenticated: false };
+    default:
+      return defaultState;
+  }
+  // Change code below this line
+
+  // Change code above this line
+};
+
+const store = Redux.createStore(authReducer);
+
+const loginUser = () => {
+  return {
+    type: 'LOGIN'
+  }
+};
+
+const logoutUser = () => {
+  return {
+    type: 'LOGOUT'
+  }
+};
+
+ex5 - Calling the function loginUser should return an object with type property set to the string LOGIN.
+
+Passed
+Calling the function logoutUser should return an object with type property set to the string LOGOUT.
+
+Passed
+The store should be initialized with an object with property login set to false.
+
+Passed
+Dispatching loginUser should update the login property in the store state to true.
+
+Passed
+Dispatching logoutUser should update the login property in the store state to false.
+
+Passed
+The authReducer function should handle multiple action types with a switch statement.
+
+Passed
+LOGIN and LOGOUT should be declared as const values and should be assigned strings of LOGINand LOGOUT.
+
+Passed
+The action creators and the reducer should reference the LOGIN and LOGOUT constants.
+// Change code below this line
+const LOGIN = 'LOGIN';
+const LOGOUT = 'LOGOUT';
+// Change code above this line
+
+const defaultState = {
+  authenticated: false
+};
+
+const authReducer = (state = defaultState, action) => {
+
+  switch (action.type) {
+
+    case LOGIN:
+      return {
+        authenticated: true
+      }
+
+    case LOGOUT:
+      return {
+        authenticated: false
+      }
+
+    default:
+      return state;
+
+  }
+
+};
+
+const store = Redux.createStore(authReducer);
+
+const loginUser = () => {
+  return {
+    type: LOGIN
+  }
+};
+
+const logoutUser = () => {
+  return {
+    type: LOGOUT
+  }
+};
+
+EX6 - Dispatching the ADD action on the store should increment the state by 1.
+
+Passed
+There should be a listener function subscribed to the store using store.subscribe.
+
+Passed
+The callback to store.subscribe should also increment the global count variable as the store is updated.
+const ADD = 'ADD';
+
+const reducer = (state = 0, action) => {
+  switch(action.type) {
+    case ADD:
+      return state + 1;
+    default:
+      return state;
+  }
+};
+
+const store = Redux.createStore(reducer);
+
+// Global count variable:
+let count = 0;
+
+// Change code below this line
+store.subscribe(() => count += 1)
+// Change code above this line
+
+store.dispatch({type: ADD});
+console.log(count);
+store.dispatch({type: ADD});
+console.log(count);
+store.dispatch({type: ADD});
+console.log(count);
+
+
+ex7 - The counterReducer should increment and decrement the state.
+
+Passed
+The authReducer should toggle the state of authenticated between true and false.
+
+Passed
+The store state should have two keys: count, which holds a number, and auth, which holds an object. The auth object should have a property of authenticated, which holds a boolean.
+
+Passed
+The rootReducer should be a function that combines the counterReducer and the authReducer.
+const INCREMENT = 'INCREMENT';
+const DECREMENT = 'DECREMENT';
+
+const counterReducer = (state = 0, action) => {
+  switch(action.type) {
+    case INCREMENT:
+      return state + 1;
+    case DECREMENT:
+      return state - 1;
+    default:
+      return state;
+  }
+};
+
+const LOGIN = 'LOGIN';
+const LOGOUT = 'LOGOUT';
+
+const authReducer = (state = {authenticated: false}, action) => {
+  switch(action.type) {
+    case LOGIN:
+      return {
+        authenticated: true
+      }
+    case LOGOUT:
+      return {
+        authenticated: false
+      }
+    default:
+      return state;
+  }
+};
+
+const rootReducer = Redux.combineReducers({
+  count: counterReducer,
+  authReducer,
+  auth: authReducer
+});
+
+const store = Redux.createStore(rootReducer);
+
+8 - 
+The action creator addNoteText should return an object with keys type and text.
+Passed
+Dispatching an action of type ADD_NOTE with the addNoteText action creator should update the state to the string passed to the action creator.
+const ADD_NOTE = 'ADD_NOTE';
+
+const notesReducer = (state = 'Initial State', action) => {
+  switch(action.type) {
+    // Change code below this line
+    case ADD_NOTE:
+    return action.text ;
+    // Change code above this line
+    default:
+      return state;
+  }
+};
+
+const addNoteText = (note) => {
+  // Change code below this line
+  return {
+    type: ADD_NOTE,
+    text: note
+  };
+  // Change code above this line
+};
+
+const store = Redux.createStore(notesReducer);
+
+console.log(store.getState());
+store.dispatch(addNoteText('Hello!'));
+console.log(store.getState());
