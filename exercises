@@ -11,8 +11,9 @@ function actionCreator(action) {
   return action;
 }
 
-ex2 - The Redux store in the code editor has an initialized state that's an object containing a login property currently set to false. There's also an action creator called loginAction() which returns an action of type LOGIN. Dispatch the LOGIN action to the Redux store by calling the dispatch method, and pass in the action created by loginAction().
+https://www.freecodecamp.org/learn/front-end-libraries/redux/dispatch-an-action-event
 
+ex2 - The Redux store in the code editor has an initialized state that's an object containing a login property currently set to false. There's also an action creator called loginAction() which returns an action of type LOGIN. Dispatch the LOGIN action to the Redux store by calling the dispatch method, and pass in the action created by loginAction().
 
 const store = Redux.createStore(
   (state = {login: false}) => state
@@ -26,6 +27,8 @@ const loginAction = () => {
 
 // Dispatch the action here:
 store.dispatch(loginAction())
+
+https://www.freecodecamp.org/learn/front-end-libraries/redux/handle-an-action-in-the-store
 
 ex3 - The code editor has the previous example as well as the start of a reducer function for you. Fill in the body of the reducer function so that if it receives an action of type 'LOGIN' it returns a state object with login set to true. Otherwise, it returns the current state. Note that the current state and the dispatched action are passed to the reducer, so you can access the action's type directly with action.type.
 
@@ -51,6 +54,8 @@ const loginAction = () => {
     type: 'LOGIN'
   }
 };
+
+https://www.freecodecamp.org/learn/front-end-libraries/redux/use-a-switch-statement-to-handle-multiple-actions
 
 ex4 - Calling the function loginUser should return an object with type property set to the string LOGIN.
 
@@ -100,6 +105,8 @@ const logoutUser = () => {
     type: 'LOGOUT'
   }
 };
+
+https://www.freecodecamp.org/learn/front-end-libraries/redux/use-const-for-action-types
 
 ex5 - Calling the function loginUser should return an object with type property set to the string LOGIN.
 
@@ -167,6 +174,8 @@ const logoutUser = () => {
   }
 };
 
+https://www.freecodecamp.org/learn/front-end-libraries/redux/register-a-store-listener
+
 EX6 - Dispatching the ADD action on the store should increment the state by 1.
 
 Passed
@@ -201,6 +210,7 @@ console.log(count);
 store.dispatch({type: ADD});
 console.log(count);
 
+https://www.freecodecamp.org/learn/front-end-libraries/redux/combine-multiple-reducers
 
 ex7 - The counterReducer should increment and decrement the state.
 
@@ -252,6 +262,7 @@ const rootReducer = Redux.combineReducers({
 
 const store = Redux.createStore(rootReducer);
 
+https://www.freecodecamp.org/learn/front-end-libraries/redux/send-action-data-to-the-store
 8 - 
 The action creator addNoteText should return an object with keys type and text.
 Passed
@@ -283,3 +294,217 @@ const store = Redux.createStore(notesReducer);
 console.log(store.getState());
 store.dispatch(addNoteText('Hello!'));
 console.log(store.getState());
+
+https://www.freecodecamp.org/learn/front-end-libraries/redux/write-a-counter-with-redux
+9 -
+The action creator incAction should return an action object with type equal to the value of INCREMENT
+
+Passed
+The action creator decAction should return an action object with type equal to the value of DECREMENT
+
+Passed
+The Redux store should initialize with a state of 0.
+
+Passed
+Dispatching incAction on the Redux store should increment the state by 1.
+
+Passed
+Dispatching decAction on the Redux store should decrement the state by 1.
+
+Passed
+counterReducer should be a function
+
+const INCREMENT = 'INCREMENT';
+const DECREMENT = 'DECREMENT';
+
+function counterReducer(state = 0, action) {
+    switch(action.type) {
+        case INCREMENT:
+            return state + 1;
+        case DECREMENT:
+            return state - 1;
+        default:
+            return state;
+    }
+}
+
+const incAction = () => {
+  return {
+    type: INCREMENT
+  };
+};
+
+const decAction = () => {
+    return {
+        type: DECREMENT
+    }
+};
+
+const store = Redux.createStore(counterReducer);
+
+https://www.freecodecamp.org/learn/front-end-libraries/redux/never-mutate-state
+10 -
+O armazenamento Redux deve existir e inicializar com um estado igual ao da todosmatriz no editor de código.
+
+Passed
+addToDoe immutableReducerambos devem ser funções.
+
+Passed
+Despachar uma ação do tipo ADD_TO_DOna loja Redux deve adicionar um todoitem e NÃO deve mudar de estado.
+
+const ADD_TO_DO = 'ADD_TO_DO';
+
+// A list of strings representing tasks to do:
+const todos = [
+  'Go to the store',
+  'Clean the house',
+  'Cook dinner',
+  'Learn to code',
+];
+
+const immutableReducer = (state = todos, action) => {
+  switch(action.type) {
+    case ADD_TO_DO:
+      // Don't mutate state here or the tests will fail
+    return [...state, action.todo] ou return state.concat(action.todo) ou 
+        
+    default:
+      return state;
+  }
+};
+
+const addToDo = (todo) => {
+  return {
+    type: ADD_TO_DO,
+    todo
+  }
+}
+
+const store = Redux.createStore(immutableReducer);
+
+
+https://www.freecodecamp.org/learn/front-end-libraries/redux/use-the-spread-operator-on-arrays
+11 -
+O armazenamento Redux deve existir e inicializar com um estado igual a [Do not mutate state!].
+
+Passed
+addToDoe immutableReducerambos devem ser funções.
+
+Passed
+Despachar uma ação do tipo ADD_TO_DOna loja Redux deve adicionar um todoitem e NÃO deve mudar de estado.
+
+Passed
+O operador de propagação deve ser usado para retornar o novo estado.
+const immutableReducer = (state = ['Do not mutate state!'], action) => {
+  switch(action.type) {
+    case 'ADD_TO_DO':
+      // Don't mutate state here or the tests will fail
+    return [...state, action.todo]
+    default:
+      return state;
+  }
+};
+
+const addToDo = (todo) => {
+  return {
+    type: 'ADD_TO_DO',
+    todo
+  }
+}
+
+const store = Redux.createStore(immutableReducer);
+
+https://www.freecodecamp.org/learn/front-end-libraries/redux/remove-an-item-from-an-array
+12 -
+The Redux store should exist and initialize with a state equal to [0,1,2,3,4,5]
+
+Passed
+removeItem and immutableReducer both should be functions.
+
+Passed
+Dispatching the removeItem action creator should remove items from the state and should NOT mutate state.
+const immutableReducer = (state = [0,1,2,3,4,5], action) => {
+  switch(action.type) {
+    case 'REMOVE_ITEM':
+      // Don't mutate state here or the tests will fail
+      return [
+        ...state.slice(0, action.index), ...state.slice(action.index + 1, state.length)
+      ]
+    default:
+      return state;
+  }
+};
+
+const removeItem = (index) => {
+  return {
+    type: 'REMOVE_ITEM',
+    index
+  }
+}
+
+const store = Redux.createStore(immutableReducer);
+
+let numeros = [0,1,2,3,4,5];
+undefined
+numeros
+(6) [0, 1, 2, 3, 4, 5]
+let novos = [...numeros]
+undefined
+novos
+(6) [0, 1, 2, 3, 4, 5]
+let novos1 = novos.slice(1,3)
+undefined
+let novos2 = novos.slice(0,3)
+undefined
+novos2
+(3) [0, 1, 2]
+let novos3 = novos.slice(0 + 1)
+undefined
+novos3
+(5) [1, 2, 3, 4, 5]
+let novos4 = novos.slice(novos.length)
+undefined
+novos4
+[]
+
+https://www.freecodecamp.org/learn/front-end-libraries/redux/copy-an-object-with-object-assign
+13 - 
+
+The Redux store should exist and initialize with a state that is equivalent to the defaultState object declared on line 1.
+
+Passed
+wakeUp and immutableReducer both should be functions.
+
+Passed
+Dispatching an action of type ONLINE should update the property status in state to online and should NOT mutate state.
+
+Passed
+Object.assign should be used to return new state.
+
+const defaultState = {
+  user: 'CamperBot',
+  status: 'offline',
+  friends: '732,982',
+  community: 'freeCodeCamp'
+};
+
+const immutableReducer = (state = defaultState, action) => {
+  switch(action.type) {
+    case 'ONLINE':
+      // Don't mutate state here or the tests will fail
+      let newDefaultStatus = Object.assign({}, state)
+      newDefaultStatus.status = 'online'
+
+      return newDefaultStatus
+    default:
+      return state;
+  }
+};
+
+const wakeUp = () => {
+  return {
+    type: 'ONLINE'
+  }
+};
+
+const store = Redux.createStore(immutableReducer);
