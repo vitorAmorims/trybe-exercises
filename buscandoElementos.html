@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propriedades</title>
+</head>
+<body>
+    <div id="paiDoPai">
+        <div id="pai">
+            <div id="primeiroFilho"></div>
+            <div id="elementoOndeVoceEsta">
+                <div id="primeiroFilhoDoFilho"></div>
+            <div id="segundoEultimoFilhoDoFilho"></div>
+        </div>
+        Atenção!
+            <div id="terceiroFilho"></div>
+            <div id="quartoEUltimoFilho"></div>
+        </div>
+    </div>
+    <script>
+        console.log(document.querySelector("#elementoOndeVoceEsta").parentNode) //pesquisei elemento pai
+        var pai = (document.querySelector("#elementoOndeVoceEsta").parentNode) //atribui elemento pai para variável
+        /*
+        alterando propriedades via js
+        */
+        pai.style.backgroundColor = "black";
+        pai.style.color = "silver";
+        pai.style.textAlign = "center";
+        pai.style.width = "100%";
+        pai.style.height = "60px";
+        pai.style.size = "20px";
+        pai.style.border = "3px solid silver";
+        console.log(document.querySelector("#primeiroFilhoDoFilho")) //pesquisando elemento
+        var primeiroFilhoFilho = document.querySelector("#primeiroFilhoDoFilho") //atribuindo elemento
+        console.dir(primeiroFilhoFilho); //consultando mais a fundo o elemento.
+        primeiroFilhoDoFilho.innerHTML = "TESTE" //adicionado texto ao elemento #primeiroFilhoDoFilho
+        console.clear();
+        console.dir(document.querySelector("#pai").childNodes) //o comando console.dir é muito interessantte, consigo pesquisar a fundo o elemento.
+        console.clear();
+        /*
+        consigo acesso o elemento primeiroFilho de duas maneiras
+        */
+        console.log(document.querySelector("#pai").firstElementChild)
+        console.log(document.querySelector("#pai").childNodes[1])
+        //Agora acesse o primeiroFilho a partir de elementoOndeVoceEsta.
+        console.clear();
+        console.log(document.querySelector("#elementoOndeVoceEsta")) //estou no elemento #elementoOndeVoceEsta
+        console.dir(document.querySelector("#elementoOndeVoceEsta"))//usei console.dir para pesquisar o elemento mais a fundo.
+        console.clear();
+        console.dir(document.querySelector("#elementoOndeVoceEsta").previousElementSibling)
+        //Agora acesse o texto Atenção! a partir de elementoOndeVoceEsta.
+        console.clear();
+        console.dir(document.querySelector("#elementoOndeVoceEsta").parentNode.outerText)
+        //Agora acesse o terceiroFilho a partir de elementoOndeVoceEsta.
+        console.clear();
+        console.dir(document.querySelector("#elementoOndeVoceEsta").parentNode.childNodes[5])
+        //Agora acesse o terceiroFilho a partir de pai.
+        console.clear();
+        console.dir(document.querySelector("#pai").childNodes[5])
+    </script>
+</body>
+</html>

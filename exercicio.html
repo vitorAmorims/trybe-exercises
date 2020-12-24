@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      div {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      
+      // Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body;
+      let h1 = document.createElement("h1");
+      h1.innerHTML = "Exercício 5.2 - JavaScript DOM"
+      window.document.body.appendChild(h1);
+      console.dir(document.all[6].children[1].innerHTML); //confirmando que o h1 está como filho da tag body, confirmado conteúdo Exercício 5.2 - JavaScript DOM
+      
+      //Adicione a tag div com a classe main-content como filho da tag body;
+      let div = document.createElement("div");
+      window.document.body.appendChild(div);
+      div.className = "main-content";
+      console.dir(document.body.childNodes[3]);//consulteu a div com classe main-content
+        console.clear();
+      
+        //Adicione a tag div com a classe center-content como filho da tag div criada no passo 2;
+      let div1 = document.createElement("div");
+      document.querySelector(".main-content").appendChild(div1);
+      div1.className = "center-content";
+      console.dir(document.querySelector(".center-content").parentElement) //confirmei que a div class center-content como filho da tag div class main-content
+      
+      //Adicione a tag p como filho do div criado no passo 3 e coloque algum texto;
+      console.clear();
+      let p = document.createElement("p");
+      p.innerHTML = "lorem ipsum dolor sit amet, consectet";
+      document.querySelector(".center-content").appendChild(p);
+      console.log(document.querySelector(".center-content").children[0]);//consutando o resultado.
+      
+      //Adicione a tag div com a classe left-content como filho da tag div criada no passo 2;
+      console.clear();
+      let div2 = document.createElement("div");
+      div2.className = "left-content";
+      document.querySelector(".main-content").appendChild(div2);
+      console.dir(document.querySelector(".main-content").childNodes);//confirmando a criação da tag div com a classe left-content, sendo irma da classe center-content
+
+      //Adicione a tag div com a classe right-content como filho da tag div criada no passo 2;
+      console.clear();
+      let div3 = document.createElement("div");
+      div3.className = "right-content";
+      document.querySelector(".main-content").appendChild(div3);
+      console.dir(document.querySelector(".main-content").childNodes);//confirmando a criação da tag div com a classe right-content, sendo irma das classes center-content e left-content
+
+      //Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image. Esse elemento deve ser filho do div criado no passo 5;
+      let img = document.createElement("img");
+      img.src = "https://picsum.photos/200";
+      img.className = ".small-image"
+      document.querySelector(".left-content").appendChild(img);
+      console.log(document.querySelector(".left-content"))
+
+      //Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista. Essa lista deve ser filha do div criado no passo 6;
+      let numeros = [1,2,3,4,5,6,7,8,9,10]
+      let ul = document.createElement("ul");
+      let lista = document.querySelector(".right-content")
+      for (let i = 0; i < numeros.length; i += 1) {
+        let numero = numeros[i];
+        let li = document.createElement("li");
+        li.innerText = numero;
+        lista.appendChild(li);
+      }
+
+      // Adicione 3 tags h3, todas sendo filhas do div criado no passo 2.
+      for (let i = 0; i < 3; i += 1) {
+        let h3 = document.createElement("h3")
+        document.querySelector(".main-content").appendChild(h3);
+      }
+
+      //Adicione a classe title na tag h1 criada;
+      console.log(document.querySelector("h1"))
+      h1.className = "title"
+
+      //Adicione a classe description nas 3 tags h3 criadas;
+      const h3Classe  = document.querySelectorAll("h3");
+      for (let i = 0; i < 3; i += 1) {
+        h3Classe[i].className = "description";
+      }
+      console.clear();
+      
+      //Remova o div criado no passo 5 (aquele que possui a classe left-content). Utilize a função .removeChild();
+      /*
+      pesquisei os filhos e encontrei a div class left-content
+      */
+      console.log(document.querySelector(".main-content").childNodes)
+      //ou
+      console.log(document.getElementsByClassName("main-content").childNodes)
+      console.clear();
+      let elementos = document.querySelector(".main-content").childNodes; //atribuindo o elemento pai para uma variavel
+      document.querySelector(".main-content").removeChild(elementos[1])//removendo tag a partir do elemento pai.
+      console.log(document.querySelector(".main-content").childNodes) //confirmando a remoção da tag div class left-content
+
+      //Centralize o div criado no passo 6 (aquele que possui a classe right-content). Dica: para centralizar, basta configurar o margin-right: auto do div;
+      console.log(document.querySelector(".right-content")) //pesquisei para ver o conteúdo.
+      let centralizarRightContent = document.querySelector(".right-content");
+      centralizarRightContent.style.marginRight = "auto";
+
+      //Troque a cor de fundo do elemento pai da div criada no passo 3 (aquela que possui a classe center-content) para a cor verde;
+      console.log(document.querySelector(".center-content").childNodes[0]);//pesquisando para ver o consteudo desta div.
+      let CorCenterContent = document.querySelector(".center-content").childNodes[0]
+      CorCenterContent.parentNode.style.backgroundColor = "green"
+
+      //Remova os dois últimos elementos (nove e dez) da lista criada no passo 8.
+      console.dir(document.querySelector(".right-content").childNodes);
+      let elementosLi = document.querySelector(".right-content").childNodes;
+      document.querySelector(".right-content").removeChild(elementosLi[9]);
+      document.querySelector(".right-content").removeChild(elementosLi[8]);
+      
+    
+
+    </script>
+  </body>
+</html>
