@@ -1,0 +1,24 @@
+{
+  "name": "trybe-exercises",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitorAmorims/trybe-exercises.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vitorAmorims/trybe-exercises/issues"
+  },
+  "homepage": "https://github.com/vitorAmorims/trybe-exercises#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
